@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useState} from 'react';
 import Carousel from 'pinar';
 import Dots from 'react-native-dots-pagination';
@@ -137,20 +136,3 @@ const SplashScreen = props => {
 };
 
 export default SplashScreen;
-=======
-import React from 'react';
-// import { styles } from './SplashScreen.style';
-import { Text, Button, Container } from 'native-base'
-
-const SplashScreen = props => {
-    return (
-        <Container>
-            <Text>Example</Text>
-            <Button onPress={() => props.navigation.navigate('Home')}><Text>Masuk</Text></Button>
-        </Container>
-    )
-}
-
-
-export default SplashScreen
->>>>>>> b2bb8790ce55c8c06af86497736bb01b417df314

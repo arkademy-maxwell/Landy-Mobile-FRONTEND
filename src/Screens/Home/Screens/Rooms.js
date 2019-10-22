@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {
     Container, Content, Form, Item, Input, Label, View,
-    Tab, Tabs, Button, Grid, Col, Row, Text, Icon, tintColor
+    Tab, Tabs, Button, Grid, Col, Row, Text, tintColor
 } from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { Image, TouchableOpacity } from 'react-native'
 import Styles from './Style.style'
 
@@ -26,7 +27,7 @@ const Rooms = props => {
                                 <Grid>
                                     <Col size={1}>
                                         <Text>
-                                            {/* <Icon style={[{ color: tintColor }]} size={25} name={''} /> */}
+                                            <Icon style={[{ color: tintColor }]} size={25} name={'ios-pin'} />
                                         </Text>
                                     </Col>
                                     <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>Pilih Lokasi Menginap</Text></Col>
@@ -41,7 +42,7 @@ const Rooms = props => {
                         </Row>
                         <Row>
                             <Grid>
-                                <Col size={1}><Text>Kiri</Text></Col>
+                                <Col size={1}><Text><Icon style={[{ color: tintColor }]} size={25} name={'ios-calendar'} /></Text></Col>
                                 <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>Senin, 22 April 2019</Text></Col>
                             </Grid>
                         </Row>
@@ -52,7 +53,7 @@ const Rooms = props => {
                         </Row>
                         <Row>
                             <Grid>
-                                <Col size={1}><Text>Kiri</Text></Col>
+                                <Col size={1}><Text><Icon style={[{ color: tintColor }]} size={25} name={'ios-calendar'} /></Text></Col>
                                 <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>1 Malam</Text></Col>
 
                             </Grid>
