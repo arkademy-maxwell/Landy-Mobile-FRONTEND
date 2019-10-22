@@ -5497,6 +5497,7 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+<<<<<<< HEAD
 react-native-dots-pagination@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/react-native-dots-pagination/-/react-native-dots-pagination-0.1.6.tgz#1271b1c57c582d224f9d0ad8f87e0d9c05a4cdbc"
@@ -5504,6 +5505,8 @@ react-native-dots-pagination@^0.1.6:
   dependencies:
     prop-types "^15.7.2"
 
+=======
+>>>>>>> b2bb8790ce55c8c06af86497736bb01b417df314
 react-native-drawer@2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"
