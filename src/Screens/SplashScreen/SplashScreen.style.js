@@ -4,7 +4,8 @@ const HEIGHT_DEVICE = Dimensions.get('window').height;
 const WIDTH_DEVICE = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   content: {
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
+    flex: 1,
   },
   button: {
     marginHorizontal: 5,
@@ -39,7 +40,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   carousel: {
-    height: HEIGHT_DEVICE - 30,
+    height: HEIGHT_DEVICE * 0.96,
     paddingVertical: 75,
   },
   buttonSpace: {
