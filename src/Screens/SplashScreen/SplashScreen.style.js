@@ -4,7 +4,6 @@ const HEIGHT_DEVICE = Dimensions.get('window').height;
 const WIDTH_DEVICE = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   content: {
-    backgroundColor: 'red',
     flex: 1,
   },
   button: {
@@ -12,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   nextButton: {
     height: 40,
-    width: 170,
+    width: 180,
     justifyContent: 'center',
     borderRadius: 50,
     backgroundColor: '#ffcb00',
@@ -36,16 +35,19 @@ export const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Medium',
   },
   footerSplash: {
-    paddingVertical: 18,
+    flex: 1.1,
     flexDirection: 'row',
+    paddingBottom: 20,
+    paddingHorizontal: 20,
   },
   carousel: {
-    height: HEIGHT_DEVICE * 0.96,
-    paddingVertical: 75,
+    height: HEIGHT_DEVICE * 0.8,
+    paddingTop: 50,
   },
   buttonSpace: {
     flex: 1,
     alignItems: 'center',
+    alignSelf: 'flex-end',
   },
   imageHeader: {
     width: 250,

@@ -105,8 +105,8 @@ const SplashScreen = props => {
 
   let carousel;
   return (
-    <Content style={styles.content}>
-      <View>
+    <View style={styles.content}>
+      <View style={{flex: 5}}>
         <Carousel
           ref={Carousel => (carousel = Carousel)}
           showsControls={false}
@@ -131,7 +131,7 @@ const SplashScreen = props => {
         <View style={styles.buttonSpace}>{prevButton()}</View>
         <View style={styles.buttonSpace}>{nextButton()}</View>
       </View>
-    </Content>
+    </View>
   );
 };
 
