@@ -1,12 +1,10 @@
 import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-
-import OpenScreen from './src/Screens/OpenScreen/OpenScreen';
-import SplashScreen from './src/Screens/SplashScreen/SplashScreen';
+import Navigation from './src/Navigations';
 
 const App = props => {
-  return <OpenScreen />;
+  return <Navigation />;
 };
 
 export default App;

@@ -42,7 +42,11 @@ const SplashScreen = props => {
     const nextAction = () => {
       if (dotsActive < 3 && dotsAction === dotsActive) {
         setDotsActive(dotsActive + 1);
-        return carousel.scrollToNext();
+        carousel.scrollToNext();
+      }
+
+      if (dotsActive === 3) {
+        return props.navigation.navigate('Home');
       }
     };
 
