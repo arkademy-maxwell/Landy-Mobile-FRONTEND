@@ -5175,6 +5175,11 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
+pinar@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/pinar/-/pinar-0.11.0.tgz#0040dd9df66b53ae0dc192371a56c0f05d327c6d"
+  integrity sha512-e/i2IIxqwLuhVgQ2d/jP+5DSonxEgS2J1joREdt0f3iENVTw9/td0r2BId9oURW9iDfZqArJzBomLXhIF0huNw==
+
 pirates@^4.0.0, pirates@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.1.tgz#643a92caf894566f91b2b986d2c66950a8e2fb87"
@@ -5361,6 +5366,13 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6, react-is
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
+
+react-native-dots-pagination@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-dots-pagination/-/react-native-dots-pagination-0.1.6.tgz#1271b1c57c582d224f9d0ad8f87e0d9c05a4cdbc"
+  integrity sha512-1ZcQZVnZl14N8UN5LfqKOV1/6y7grEYAySANVVCOdl7sREh8MWNIYf8+pO3J6l7rGcoX7P8SyV1V1zcgeUhzRQ==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-native-drawer@2.5.1:
   version "2.5.1"
