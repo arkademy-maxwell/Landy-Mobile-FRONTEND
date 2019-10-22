@@ -1,10 +1,4 @@
 import React, {useState} from 'react';
-import {
-  Dimensions,
-  TouchableOpacity,
-  Platform,
-  AccessibilityInfo,
-} from 'react-native';
 import Carousel from 'pinar';
 import Dots from 'react-native-dots-pagination';
 import {ImageBackground} from 'react-native';
@@ -114,7 +108,9 @@ const SplashScreen = props => {
           showsControls={false}
           style={styles.carousel}
           renderDots={renderDots}
-          onIndexChanged={({index}) => hasIndexChanged(index)}>
+          onIndexChanged={({index}) => hasIndexChanged(index)}
+          scrollEnabled={false}
+          scrollEventThrottle={16}>
           {DataSplash.map((item, idx) => {
             return (
               <LayoutSplash
