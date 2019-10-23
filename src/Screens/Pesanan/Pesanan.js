@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, TouchableOpacity, ImageBackground} from 'react-native';
-import {Text, Container, View, Icon} from 'native-base';
+import {Text, View, Icon} from 'native-base';
 import {styles} from './Pesanan.style';
 
 const Pesanan = props => {
@@ -15,7 +15,9 @@ const Pesanan = props => {
         <Text style={styles.secondText}>
           Pembelian yang sedang berlangsung akan ditampilkan disini
         </Text>
-        <Text style={styles.linkText}>LIHAT BUKTI PEMBELIAN</Text>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Bukti')}>
+          <Text style={styles.linkText}>LIHAT BUKTI PEMBELIAN</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -42,7 +44,9 @@ const Pesanan = props => {
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={0.7}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => props.navigation.navigate('TiketVoucher')}>
                 <View style={styles.listCard}>
                   <View style={styles.iconSection}>
                     <Icon
@@ -57,7 +61,7 @@ const Pesanan = props => {
           </ScrollView>
         </View>
       </View>
-      {_renderEmptyCart()}
+      {_renderEmptyCart({...props})}
     </View>
   );
 };

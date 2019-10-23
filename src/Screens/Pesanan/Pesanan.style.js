@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     height: 220,
   },
   nav: {
-    backgroundColor: '#0191ef',
+    backgroundColor: '#017fef',
     height: 60,
     justifyContent: 'center',
     paddingLeft: 20,
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     elevation: 2,
   },
   listCard: {
-    width: 140,
+    width: 115,
     height: 120,
     backgroundColor: '#00aeef',
     borderRadius: 5,
@@ -82,7 +82,7 @@ export const styles = StyleSheet.create({
   },
   textIconSection: {
     color: '#fff',
-    fontSize: 12,
+    fontSize: 10,
     marginTop: 5,
     textDecorationLine: 'underline',
   },
@@ -107,7 +107,7 @@ export const styles = StyleSheet.create({
   linkText: {
     color: '#14b3ef',
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 'bold',
   },
   textSection: {

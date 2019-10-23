@@ -7,7 +7,12 @@ import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom
 
 // ANCHOR Import Screen
 import HomeNav from './Screens/Home/HomeNav';
+
+// ANCHOR Import Pesanan : Family
 import Pesanan from './Screens/Pesanan/Pesanan';
+import Bukti from './Screens/Pesanan/Child/BuktiScreen/BuktiScreen';
+import TiketVoucher from './Screens/Pesanan/Child/TiketVoucherScreen/TiketVoucherScreen';
+
 import Menu from './Screens/Menu/Menu';
 import FindPlace from './Screens/Home/Component/FindPlace';
 import OpenScreen from './Screens/OpenScreen/OpenScreen';
@@ -15,9 +20,11 @@ import SplashScreen from './Screens/SplashScreen/SplashScreen';
 
 const MainNavigator = createStackNavigator(
   {
-    OpenScreen: {screen: OpenScreen},
-    SplashScreen: {screen: SplashScreen},
-    FindPlace: {screen: FindPlace},
+    OpenScreen,
+    SplashScreen,
+    FindPlace,
+    Bukti,
+    TiketVoucher,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
