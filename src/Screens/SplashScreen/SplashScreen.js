@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Carousel from 'pinar';
 import Dots from 'react-native-dots-pagination';
 import {ImageBackground} from 'react-native';
-import {View, Text, Button, Content} from 'native-base';
+import {View, Text, Button} from 'native-base';
 import {styles} from './SplashScreen.style';
 
 const SplashScreen = props => {
@@ -18,7 +18,7 @@ const SplashScreen = props => {
     );
   };
 
-  const prevButton = () => {
+  const PrevButton = () => {
     const prevAction = () => {
       if (dotsActive >= 0 && dotsAction === dotsActive) {
         setDotsActive(dotsActive - 1);
@@ -26,19 +26,17 @@ const SplashScreen = props => {
       }
     };
 
-    if (dotsActive !== 0) {
-      return (
-        <Button
-          transparent
-          onPress={() => prevAction()}
-          style={[styles.prevButton, styles.button]}>
-          <Text style={styles.textPrevButton}>Kembali</Text>
-        </Button>
-      );
-    }
+    return (
+      <Button
+        transparent
+        onPress={() => prevAction()}
+        style={[styles.prevButton, styles.button]}>
+        <Text style={styles.textPrevButton}>Kembali</Text>
+      </Button>
+    );
   };
 
-  const nextButton = () => {
+  const NextButton = () => {
     const nextAction = () => {
       if (dotsActive < 3 && dotsAction === dotsActive) {
         setDotsActive(dotsActive + 1);
@@ -113,7 +111,6 @@ const SplashScreen = props => {
           style={styles.carousel}
           renderDots={renderDots}
           onIndexChanged={({index}) => hasIndexChanged(index)}
-          scrollEnabled={false}
           scrollEventThrottle={16}>
           {DataSplash.map((item, idx) => {
             return (
@@ -128,8 +125,12 @@ const SplashScreen = props => {
         </Carousel>
       </View>
       <View style={styles.footerSplash}>
-        <View style={styles.buttonSpace}>{prevButton()}</View>
-        <View style={styles.buttonSpace}>{nextButton()}</View>
+        <View style={styles.buttonSpace}>
+          {dotsAction !== 0 && <PrevButton />}
+        </View>
+        <View style={styles.buttonSpace}>
+          <NextButton />
+        </View>
       </View>
     </View>
   );

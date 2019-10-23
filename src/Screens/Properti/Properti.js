@@ -9,7 +9,7 @@ const Properti = props => {
         <Container>
         <Header icon="close"/>
             <Content>
-            <LinearGradient colors={['#013c64', '#1a8cb5','#1a8cb5']} style={Styles.linearGradient}>
+            <LinearGradient colors={['#013c64', '#1a8cb5',]} style={Styles.linearGradient}>
                 <Grid >
                     <Col>
                         <Text>Airy</Text>

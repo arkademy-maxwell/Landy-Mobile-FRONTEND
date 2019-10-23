@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, TouchableOpacity, ImageBackground} from 'react-native';
 import {Text, View, Icon} from 'native-base';
-import {styles} from './Pesanan.style';
+import {styles} from './PesananScreen.style';
 
 const Pesanan = props => {
   const _renderEmptyCart = props => (
