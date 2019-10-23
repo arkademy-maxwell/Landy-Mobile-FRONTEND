@@ -5497,7 +5497,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-<<<<<<< HEAD
 react-native-dots-pagination@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/react-native-dots-pagination/-/react-native-dots-pagination-0.1.6.tgz#1271b1c57c582d224f9d0ad8f87e0d9c05a4cdbc"
@@ -5505,8 +5504,6 @@ react-native-dots-pagination@^0.1.6:
   dependencies:
     prop-types "^15.7.2"
 
-=======
->>>>>>> b2bb8790ce55c8c06af86497736bb01b417df314
 react-native-drawer@2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"
@@ -5582,6 +5579,13 @@ react-native-safe-area-view@^0.14.1:
   integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
   dependencies:
     debounce "^1.2.0"
+
+react-native-swiper@^1.6.0-nightly.5:
+  version "1.6.0-nightly.5"
+  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.6.0-nightly.5.tgz#894319918ff22680c325b8052457ccf213a7c7cd"
+  integrity sha512-0siIUvD7FcGPSjRtsMyTWWmosUA+kJNT0WbJ0lf3Drp8vxeuWAg5kSmvQO+dJpISugcBWpfBc0OBDC5fBl+DsA==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
