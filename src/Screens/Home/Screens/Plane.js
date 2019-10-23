@@ -5,6 +5,9 @@ import {
 } from 'native-base';
 import { Image, TouchableOpacity } from 'react-native'
 import Styles from './Style.style'
+
+
+
 // import { Icon, grid } from 'react-native-vector-icons/dist/FontAwesome';
 
 const Ticket = props => {

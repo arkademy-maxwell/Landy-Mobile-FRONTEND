@@ -1,11 +1,13 @@
 import React from 'react';
-import { Text, Container } from 'native-base'
+import { Text, Container, Button } from 'native-base'
 // import { styles } from './Home.style';
 
 const Menu = props => {
     return (
         <Container>
-            <Text>Menu</Text>
+            <Button full onPress={() => props.navigation.navigate('Registration')}>
+                <Text>Primary</Text>
+            </Button>
         </Container>
     )
 }
