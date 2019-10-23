@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 const WIDTH_DEVICE = Dimensions.get('window').width;

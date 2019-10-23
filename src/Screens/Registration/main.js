@@ -15,8 +15,8 @@ const Registration = props => {
                     <View style={Styles.headerRegistration}>
                         <Header hasSegment transparent>
                             <Left>
-                                <Button transparent>
-                                    <Icon name="arrow-back"/>
+                                <Button transparent onPress={() => props.navigation.goBack()}>
+                                    <Icon name="arrow-back" />
                                 </Button>
                             </Left>
                             <Body>
@@ -29,9 +29,9 @@ const Registration = props => {
                     </View>
                     <View style={{ backgroundColor: '#fff' }}>
                         <View style={Styles.wrappingButton}>
-                            <Button full warning style={Styles.buttonLogin} 
-                            onPress={()=> props.navigation.navigate('Login')}>
-                                <Text>Masuk</Text>
+                            <Button full warning style={Styles.buttonLogin}
+                                onPress={() => props.navigation.navigate('Login')}>
+                                <Text style={{ color: '#000' }}>Masuk</Text>
                             </Button>
                             <Button bordered full style={Styles.buttonRegister}>
                                 <Text style={{ color: '#bec4c8' }}>Daftar</Text>

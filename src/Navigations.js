@@ -17,6 +17,7 @@ import OpenScreen from './Screens/OpenScreen/OpenScreen';
 import SplashScreen from './Screens/SplashScreen/SplashScreen';
 import Main from './Screens/Registration/main';
 import Login from './Screens/Registration/Login'
+import Properti from './Screens/Properti/Properti'
 
 const MainNavigator = createStackNavigator(
   {
@@ -25,6 +26,10 @@ const MainNavigator = createStackNavigator(
     FindPlace,
     Bukti,
     TiketVoucher,
+    Main,
+    Login,
+    Menu,
+    Properti,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
@@ -76,7 +81,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'Main',
+    initialRouteName: 'SplashScreen',
   },
 );
 
