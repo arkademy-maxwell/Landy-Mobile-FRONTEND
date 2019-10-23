@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Carousel from 'pinar';
 import Dots from 'react-native-dots-pagination';
 import {ImageBackground} from 'react-native';
-import {View, Text, Button, Content} from 'native-base';
+import {View, Text, Button} from 'native-base';
 import {styles} from './SplashScreen.style';
 
 const SplashScreen = props => {

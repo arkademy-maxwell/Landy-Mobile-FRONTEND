@@ -78,7 +78,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'OpenScreen',
+    initialRouteName: 'Promo',
   },
 );
 
