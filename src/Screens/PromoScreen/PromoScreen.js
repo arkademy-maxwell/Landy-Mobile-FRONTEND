@@ -1,11 +1,11 @@
 import React from 'react';
-import {ImageBackground, ScrollView} from 'react-native';
+import {ImageBackground, ScrollView, TouchableOpacity} from 'react-native';
 import {Text, View, Icon, Button} from 'native-base';
 import {styles} from './PromoScreen.style';
 import Swiper from 'react-native-swiper';
 
 const PromoScreen = props => {
-  const _renderEmptyPromo = props => (
+  const _renderEmptyPromo = item => (
     <View style={styles.mainContent}>
       <ImageBackground
         source={require('../../../public/assets/Image/ic_empty_ticket.png')}
@@ -33,8 +33,11 @@ const PromoScreen = props => {
     );
   };
 
-  const CardPromo = props => (
-    <View style={styles.listCard}>
+  const CardPromo = item => (
+    <TouchableOpacity
+      style={styles.listCard}
+      onPress={() => props.navigation.navigate('DetailPromo')}
+      activeOpacity={0.9}>
       <View style={styles.textHeader}>
         <Text style={styles.textPromo}>
           Periode promo{' '}
@@ -47,7 +50,7 @@ const PromoScreen = props => {
           style={{width: '100%', height: 205}}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -66,7 +69,6 @@ const PromoScreen = props => {
           <Swiper
             autoplayTimeout={2}
             autoplay={true}
-            onIndexChanged={index => console.log(index)}
             renderPagination={_renderPagination}>
             <View style={styles.adsBox}>
               <ImageBackground
