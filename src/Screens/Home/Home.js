@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {
-  Container,
   Content,
   Form,
   Item,
@@ -21,7 +20,7 @@ import ScreenPlane from './Screens/Plane';
 const Rooms = props => {
   return (
     <Content>
-      <HeaderBanner />
+      <HeaderBanner {...props} />
       <View>
         <Tabs
           tabBarUnderlineStyle={{borderBottomWidth: 2, borderColor: '#1bb6f1'}}

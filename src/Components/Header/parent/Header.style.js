@@ -1,5 +1,4 @@
-
-import { Dimensions, StyleSheet } from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 const WIDTH_DEVICE = Dimensions.get('window').width;
@@ -19,6 +18,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlignVertical: 'center',
   },
-})
+});
 
-export default styles
+export default styles;

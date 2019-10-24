@@ -9,7 +9,7 @@ const PromoScreen = props => {
     <View style={styles.mainContent}>
       <ImageBackground
         source={require('../../../public/assets/Image/ic_empty_ticket.png')}
-        style={{width: 180, height: 130, alignSelf: 'center'}}
+        style={{width: 180, height: 120, alignSelf: 'center'}}
       />
       <View style={styles.textSection}>
         <Text style={styles.mainText}>Promo belum tersedia</Text>
@@ -71,19 +71,19 @@ const PromoScreen = props => {
             <View style={styles.adsBox}>
               <ImageBackground
                 source={require('../../../public/assets/Dummy/promo_1.jpg')}
-                style={{width: '100%', height: 240}}
+                style={{width: '100%', height: 230}}
               />
             </View>
             <View style={styles.adsBox}>
               <ImageBackground
                 source={require('../../../public/assets/Dummy/promo_1.png')}
-                style={{width: '100%', height: 240}}
+                style={{width: '100%', height: 230}}
               />
             </View>
             <View style={styles.adsBox}>
               <ImageBackground
                 source={require('../../../public/assets/Dummy/promo_2.png')}
-                style={{width: '100%', height: 240}}
+                style={{width: '100%', height: 230}}
               />
             </View>
           </Swiper>
