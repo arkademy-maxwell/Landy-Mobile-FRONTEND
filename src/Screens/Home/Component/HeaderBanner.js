@@ -36,7 +36,6 @@ const Home = props => {
       <Swiper
         autoplayTimeout={2}
         autoplay={true}
-        onIndexChanged={index => console.log(index)}
         renderPagination={_renderPagination}>
         <View style={styles.adsBox}>
           <ImageBackground

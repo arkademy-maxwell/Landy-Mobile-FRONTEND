@@ -11,6 +11,7 @@ import Pesanan from './Screens/PesananScreen/PesananScreen';
 import Bukti from './Screens/PesananScreen/Child/BuktiScreen/BuktiScreen';
 import TiketVoucher from './Screens/PesananScreen/Child/TiketVoucherScreen/TiketVoucherScreen';
 import Promo from './Screens/PromoScreen/PromoScreen';
+import DetailPromo from './Screens/PromoScreen/Child/DetailPromoScreen/DetailPromoScreen';
 
 import Menu from './Screens/Menu/Menu';
 import FindPlace from './Screens/Home/Component/FindPlace';
@@ -48,11 +49,12 @@ const MainNavigator = createStackNavigator(
     resetPassword,
     ListRoom,
     DetailRoom,
+    DetailPromo,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
         navigationOptions: {
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Cari',
           tabBarIcon: ({tintColor}) => (
             <View>
               <Icon
