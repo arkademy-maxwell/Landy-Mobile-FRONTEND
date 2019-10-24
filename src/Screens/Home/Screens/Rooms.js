@@ -20,7 +20,6 @@ import {
 import {Image, TouchableOpacity} from 'react-native';
 import Styles from './Style.style';
 
-
 // Asset
 // import imageRooms from ''
 
@@ -56,7 +55,7 @@ const Rooms = props => {
 
             <Row>
               <Col size={1}>
-                <Icon type="SimpleLineIcons" name="location-pin" />
+                <Icon type="FontAwesome5" name="calendar-check" />
               </Col>
               <Col size={5}>
                 <Text style={Styles.titleComponent}>Check-in</Text>
@@ -83,7 +82,7 @@ const Rooms = props => {
             <Row>
               <Grid>
                 <Col size={1}>
-                  <Icon type="SimpleLineIcons" name="location-pin" />
+                  <Icon type="FontAwesome5" name="calendar-check" />
                 </Col>
                 <Col size={5} style={Styles.borderComponent}>
                   <Text style={Styles.mainText}>1 Malam</Text>
@@ -92,7 +91,11 @@ const Rooms = props => {
             </Row>
           </Grid>
 
-          <Button full warning style={Styles.buttonCariKamar}>
+          <Button
+            onPress={() => props.navigate('ListRoom')}
+            full
+            warning
+            style={Styles.buttonCariKamar}>
             <Text style={Styles.textCariKamar}>Cari Kamar Landy Rooms</Text>
           </Button>
 

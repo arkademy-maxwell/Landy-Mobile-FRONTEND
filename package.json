@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "native-base": "^2.13.8",
     "pinar": "^0.11.0",
     "react": "16.9.0",
