@@ -146,6 +146,12 @@ const styles = StyleSheet.create({
     color: '#7f8c8d',
     fontSize: 13,
   },
+  cardFour: {
+    borderRadius: 5,
+    overflow: 'hidden',
+    height: 'auto',
+    borderColor: '#fff',
+  },
 });
 
 export default styles;

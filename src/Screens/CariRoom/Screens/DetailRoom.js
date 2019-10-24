@@ -17,6 +17,7 @@ import {
   Col,
   Row,
   CardItem,
+  CheckBox,
 } from 'native-base';
 import {ScrollView, ImageBackground, Image} from 'react-native';
 import Header from '../Components/Header';
@@ -230,10 +231,11 @@ const DetailRoom = props => {
               </Row>
             </Grid>
           </Card>
-          <Card style={Styles.cardTwo}>
+          <Card style={Styles.cardFour}>
             <Grid style={{padding: 15}}>
               <Row>
-                <Text style={{fontSize: 15, color: '#7f8c8d'}}>
+                <Text
+                  style={{fontSize: 15, color: '#7f8c8d', marginBottom: 20}}>
                   KETERSEDIAAN KAMAR
                 </Text>
               </Row>
@@ -258,6 +260,207 @@ const DetailRoom = props => {
                 </Col>
               </Row>
             </Grid>
+            <Grid>
+              <Col>
+                <ListItem style={{borderColor: '#fff'}}>
+                  <Body>
+                    <Text style={{textAlign: 'center', fontSize: 13}}>
+                      Tampilkan Harga 10 Malam
+                    </Text>
+                  </Body>
+                  <CheckBox style={{borderColor: '#7f8c8d', borderRadius: 2}} />
+                </ListItem>
+              </Col>
+            </Grid>
+            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
+              <Grid>
+                <Row>
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: '#00aeef',
+                      textDecorationLine: 'underline',
+                    }}>
+                    Landy Rooms Superior Twin
+                  </Text>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="MaterialIcons"
+                          name="free-breakfast"
+                          style={{fontSize: 15, color: '#6e9d3c'}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
+                          Sarapan Gratis
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Zocial"
+                          name="guest"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Ionicons"
+                          name="ios-bed"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>Twin</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Entypo"
+                          name="lock"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>
+                          Tidak dapat dibatalkan
+                        </Text>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col style={{alignItems: 'center'}}>
+                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        textDecorationLine: 'line-through',
+                      }}>
+                      Rp476.480
+                    </Text>
+                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
+                      Rp.376.480
+                    </Text>
+                    <Button
+                      warning
+                      style={{
+                        borderRadius: 20,
+                        elevation: 0,
+                        marginTop: 10,
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                      }}
+                      onPress={() => props.navigation.navigate('BuatPesanan')}>
+                      <Text style={{color: '#000'}}>Pilih</Text>
+                    </Button>
+                  </Col>
+                </Row>
+              </Grid>
+            </CardItem>
+            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
+              <Grid>
+                <Row>
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: '#00aeef',
+                      textDecorationLine: 'underline',
+                    }}>
+                    Landy Rooms Superior Twin
+                  </Text>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="MaterialIcons"
+                          name="free-breakfast"
+                          style={{fontSize: 15, color: '#6e9d3c'}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
+                          Sarapan Gratis
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Zocial"
+                          name="guest"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Ionicons"
+                          name="ios-bed"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>Twin</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Entypo"
+                          name="lock"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>
+                          Tidak dapat dibatalkan
+                        </Text>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col style={{alignItems: 'center'}}>
+                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        textDecorationLine: 'line-through',
+                      }}>
+                      Rp476.480
+                    </Text>
+                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
+                      Rp.376.480
+                    </Text>
+                    <Button
+                      warning
+                      style={{
+                        borderRadius: 20,
+                        elevation: 0,
+                        marginTop: 10,
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                      }}>
+                      <Text style={{color: '#000'}}>Pilih</Text>
+                    </Button>
+                  </Col>
+                </Row>
+              </Grid>
+            </CardItem>
           </Card>
         </View>
       </Content>

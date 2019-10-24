@@ -13,10 +13,11 @@ import {
   Col,
   Row,
   Image,
+  Picker,
+  Icon,
 } from 'native-base';
 import {TouchableOpacity, ImageBackground} from 'react-native';
 import Header from '../../Components/Header/parent/Header';
-
 const DaftarBiodata = props => {
   return (
     <Container>
@@ -24,9 +25,21 @@ const DaftarBiodata = props => {
       <Content>
         <View style={{marginLeft: 20, marginRight: 35, marginBottom: 20}}>
           <Form>
-            <Item floatingLabel>
-              <Label>Title</Label>
-              <Input />
+            <Item picker style={{marginLeft: 10}}>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{width: undefined}}
+                placeholder="Select your SIM"
+                placeholderStyle={{color: '#bfc6ea'}}
+                placeholderIconColor="#007aff"
+                // selectedValue={this.state.selected2}
+                // onValueChange={this.onValueChange2.bind(this)}
+              >
+                <Picker.Item label="Tuan" value="tuan" />
+                <Picker.Item label="Nyonya" value="nyonya" />
+                <Picker.Item label="Nona" value="nyonya" />
+              </Picker>
             </Item>
             <Item floatingLabel>
               <Label>Nama Depan</Label>
