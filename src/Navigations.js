@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import HomeNav from './Screens/Home/HomeNav';
 
 // ANCHOR Import Pesanan : Family
@@ -17,8 +17,8 @@ import FindPlace from './Screens/Home/Component/FindPlace';
 import OpenScreen from './Screens/OpenScreen/OpenScreen';
 import SplashScreen from './Screens/SplashScreen/SplashScreen';
 import Main from './Screens/Registration/main';
-import Login from './Screens/Registration/Login'
-import Properti from './Screens/Properti/Properti'
+import Login from './Screens/Registration/Login';
+import Properti from './Screens/Properti/Properti';
 
 const MainNavigator = createStackNavigator(
   {
@@ -37,10 +37,10 @@ const MainNavigator = createStackNavigator(
         screen: HomeNav,
         navigationOptions: {
           tabBarLabel: 'Home',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
               <Icon
-                style={[{ color: tintColor }]}
+                style={[{color: tintColor}]}
                 size={25}
                 name={'ios-search'}
               />
@@ -48,35 +48,35 @@ const MainNavigator = createStackNavigator(
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Pesanan: {
         screen: Pesanan,
         navigationOptions: {
           tabBarLabel: 'Pesanan',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-paper'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-paper'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Menu: {
         screen: Menu,
         navigationOptions: {
           tabBarLabel: 'Menu',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-menu'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-menu'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
     }),

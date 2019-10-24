@@ -1,12 +1,11 @@
-
-import { Dimensions, StyleSheet } from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 const WIDTH_DEVICE = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   nav: {
     height: 60,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   iconNav: {
     textAlignVertical: 'center',
@@ -17,8 +16,8 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     textAlignVertical: 'center',
-    marginLeft: 10
+    marginLeft: 10,
   },
-})
+});
 
-export default styles
+export default styles;

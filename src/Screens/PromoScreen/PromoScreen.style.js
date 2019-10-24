@@ -80,9 +80,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   lineTopText: {
-    width: 47,
+    width: 53,
     height: 2,
-    backgroundColor: 'red',
+    backgroundColor: '#14b3ef',
   },
   textSection: {
     fontSize: 18,
