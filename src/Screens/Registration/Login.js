@@ -60,16 +60,6 @@ const Login = props => {
                                         </TouchableOpacity>
                                     </Col>
                                 </Grid>
-
-                                {/* <View style={{ flex: 1 }}>
-                                    <Text style={{ color: '#bdc4c4' }}>Belum Punya akun Landy?</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Button full transparent
-                                        onPress={() => props.navigation.navigate('Login')}>
-                                        <Text style={{ color: '#5ecbf5' }}>DAFTAR</Text>
-                                    </Button>
-                                </View> */}
                             </View>
                         </View>
                     </Form>

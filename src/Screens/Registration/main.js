@@ -24,7 +24,7 @@ const Registration = props => {
                             </Body>
                         </Header>
                         <View>
-                            <Image source={require('../../../public/register/register2.png')} style={{ height: 260, width: 380, marginTop: -60, zIndex: -999 }} />
+                            <Image source={require('../../../public/register/register2.png')} style={{ height: 260, width: '100%', marginTop: -60, zIndex: -999 }} />
                         </View>
                     </View>
                     <View style={{ backgroundColor: '#fff' }}>
