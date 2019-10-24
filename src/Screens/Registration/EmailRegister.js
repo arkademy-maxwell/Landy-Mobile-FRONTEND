@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Content,
@@ -13,10 +13,16 @@ import {
   Col,
   Row,
 } from 'native-base';
-import {TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Header from '../../Components/Header/parent/Header';
 
 const EmailRegister = props => {
+  const [email, setEmail] = useState('')
+
+  // useEffect(() => {
+  //   console.log({ email });
+  // }, [])
+
   return (
     <Container>
       <Header
@@ -25,11 +31,11 @@ const EmailRegister = props => {
         navigate={props.navigation.navigate}
       />
       <Content>
-        <View style={{marginLeft: 20, marginRight: 20}}>
+        <View style={{ marginLeft: 20, marginRight: 20 }}>
           <Form>
             <Item floatingLabel>
-              <Label>Username</Label>
-              <Input />
+              <Label>Email</Label>
+              <Input onChangeText={text => setEmail(text)} value={email} />
             </Item>
             <Button
               full
@@ -42,8 +48,10 @@ const EmailRegister = props => {
                 marginBottom: 30,
               }}>
               <Text
-                style={{color: '#989794'}}
-                onPress={() => props.navigation.navigate('EmailAktivasi')}>
+                style={{ color: '#989794' }}
+                onPress={() => props.navigation.navigate('DaftarBiodata', {
+                  email: email
+                })}>
                 Daftar
               </Text>
             </Button>
@@ -63,7 +71,7 @@ const EmailRegister = props => {
             <Col size={3}>
               <TouchableOpacity
                 onPress={() => props.navigation.navigate('Login')}>
-                <Text style={{color: '#5ecbf5', fontSize: 12}}>Login</Text>
+                <Text style={{ color: '#5ecbf5', fontSize: 12 }}>Login</Text>
               </TouchableOpacity>
             </Col>
           </Grid>

@@ -15,7 +15,9 @@ import {
   Icon,
   Grid,
   Col,
+  Row,
   CardItem,
+  CheckBox,
 } from 'native-base';
 import {ScrollView, ImageBackground, Image} from 'react-native';
 import Header from '../Components/Header';
@@ -112,11 +114,352 @@ const DetailRoom = props => {
             </CardItem>
             <CardItem style={Styles.cardBorder} />
             <CardItem>
-              <Icon active name="logo-googleplus" />
-              <Text>Google Plus</Text>
-              <Right>
-                <Icon name="arrow-forward" />
-              </Right>
+              <Grid>
+                <Row style={{marginBottom: 20}}>
+                  <Text style={{color: '#7f8c8d', fontSize: 12}}>
+                    STANDARD KENYAMANAN
+                  </Text>
+                </Row>
+                <Row>
+                  <Col>
+                    <View style={{width: '100%'}}>
+                      <Icon
+                        type="AntDesign"
+                        name="wifi"
+                        style={Styles.iconColor}
+                      />
+                      <Text style={Styles.titleIconFacility}>Wifi Gratis</Text>
+                    </View>
+                  </Col>
+                  <Col>
+                    <View style={{width: '100%'}}>
+                      <Icon type="Entypo" name="tv" style={Styles.iconColor} />
+                      <Text style={Styles.titleIconFacility}>
+                        TV Layar Datar
+                      </Text>
+                    </View>
+                  </Col>
+                  <Col>
+                    <View style={{width: '100%'}}>
+                      <Icon
+                        type="FontAwesome"
+                        name="shower"
+                        style={Styles.iconColor}
+                      />
+                      <Text style={Styles.titleIconFacility}>Hot Shower</Text>
+                    </View>
+                  </Col>
+                  <Col>
+                    <View style={{width: '100%'}}>
+                      <Icon type="Entypo" name="air" style={Styles.iconColor} />
+                      <Text style={Styles.titleIconFacility}>AC</Text>
+                    </View>
+                  </Col>
+                  <Col>
+                    <View style={{width: '100%'}}>
+                      <Icon
+                        type="FontAwesome"
+                        name="bed"
+                        style={Styles.iconColor}
+                      />
+                      <Text style={Styles.titleIconFacility}>
+                        tempat Tidur Bersih
+                      </Text>
+                    </View>
+                  </Col>
+                </Row>
+              </Grid>
+            </CardItem>
+          </Card>
+          <Card style={Styles.cardTwo}>
+            <View>
+              <ImageBackground
+                source={require('../../../Assets/Images/promo.png')}
+                style={Styles.cardTwoImage}
+              />
+            </View>
+            <View style={Styles.cardTwoImageShadow}>
+              <View style={Styles.wrapperTextTwo}>
+                <Text style={Styles.textTwoCard}>
+                  Pelayanannya ramah fasilitasnya baik.
+                </Text>
+                <Text style={Styles.textTwoCard}>.14 Mei 2019</Text>
+              </View>
+            </View>
+          </Card>
+
+          <Card style={Styles.cardTwo}>
+            <Grid style={{padding: 15}}>
+              <Row>
+                <Text style={{fontSize: 15, color: '#7f8c8d'}}>
+                  INFORMASI PENTING
+                </Text>
+              </Row>
+              <Row>
+                <Col size={1}>
+                  <View
+                    style={{
+                      width: 5,
+                      height: 5,
+                      borderRadius: 50,
+                      backgroundColor: '#00aeef',
+                    }}></View>
+                </Col>
+                <Col size={15}>
+                  <Text style={{fontSize: 12}}>
+                    Jam check-in mulai pukul 14.00, dan check-out sebelum pukul
+                    12.00
+                  </Text>
+                </Col>
+              </Row>
+              <Row>
+                <Col size={1}>
+                  <View
+                    style={{
+                      width: 5,
+                      height: 5,
+                      borderRadius: 50,
+                      backgroundColor: '#00aeef',
+                    }}></View>
+                </Col>
+                <Col size={15}>
+                  <Text style={{fontSize: 12}}>
+                    Pihak hotet mungkin akan meminta deposit untuk menutupi
+                    pembayaran tak terduga
+                  </Text>
+                </Col>
+              </Row>
+            </Grid>
+          </Card>
+          <Card style={Styles.cardFour}>
+            <Grid style={{padding: 15}}>
+              <Row>
+                <Text
+                  style={{fontSize: 15, color: '#7f8c8d', marginBottom: 20}}>
+                  KETERSEDIAAN KAMAR
+                </Text>
+              </Row>
+              <Row>
+                <Col style={Styles.checkin}>
+                  <Row>
+                    <Text style={Styles.ketKamarTitle}>Check-in</Text>
+                  </Row>
+                  <Row>
+                    <Text>24 Okt 2019</Text>
+                    <View style={Styles.ketKamarRounded}></View>
+                  </Row>
+                </Col>
+                <Col style={Styles.durasi}>
+                  <Row>
+                    <Text style={Styles.ketKamarTitle}>Durasi Menginap</Text>
+                  </Row>
+                  <Row>
+                    <Text>10 Malam</Text>
+                    <View style={Styles.ketKamarRounded}></View>
+                  </Row>
+                </Col>
+              </Row>
+            </Grid>
+            <Grid>
+              <Col>
+                <ListItem style={{borderColor: '#fff'}}>
+                  <Body>
+                    <Text style={{textAlign: 'center', fontSize: 13}}>
+                      Tampilkan Harga 10 Malam
+                    </Text>
+                  </Body>
+                  <CheckBox style={{borderColor: '#7f8c8d', borderRadius: 2}} />
+                </ListItem>
+              </Col>
+            </Grid>
+            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
+              <Grid>
+                <Row>
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: '#00aeef',
+                      textDecorationLine: 'underline',
+                    }}>
+                    Landy Rooms Superior Twin
+                  </Text>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="MaterialIcons"
+                          name="free-breakfast"
+                          style={{fontSize: 15, color: '#6e9d3c'}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
+                          Sarapan Gratis
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Zocial"
+                          name="guest"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Ionicons"
+                          name="ios-bed"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>Twin</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Entypo"
+                          name="lock"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>
+                          Tidak dapat dibatalkan
+                        </Text>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col style={{alignItems: 'center'}}>
+                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        textDecorationLine: 'line-through',
+                      }}>
+                      Rp476.480
+                    </Text>
+                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
+                      Rp.376.480
+                    </Text>
+                    <Button
+                      warning
+                      style={{
+                        borderRadius: 20,
+                        elevation: 0,
+                        marginTop: 10,
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                      }}
+                      onPress={() => props.navigation.navigate('BuatPesanan')}>
+                      <Text style={{color: '#000'}}>Pilih</Text>
+                    </Button>
+                  </Col>
+                </Row>
+              </Grid>
+            </CardItem>
+            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
+              <Grid>
+                <Row>
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: '#00aeef',
+                      textDecorationLine: 'underline',
+                    }}>
+                    Landy Rooms Superior Twin
+                  </Text>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="MaterialIcons"
+                          name="free-breakfast"
+                          style={{fontSize: 15, color: '#6e9d3c'}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
+                          Sarapan Gratis
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Zocial"
+                          name="guest"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Ionicons"
+                          name="ios-bed"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>Twin</Text>
+                      </Col>
+                    </Row>
+                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                      <Col size={1}>
+                        <Icon
+                          type="Entypo"
+                          name="lock"
+                          style={{fontSize: 15}}
+                        />
+                      </Col>
+                      <Col size={6}>
+                        <Text style={{fontSize: 13}}>
+                          Tidak dapat dibatalkan
+                        </Text>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col style={{alignItems: 'center'}}>
+                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        textDecorationLine: 'line-through',
+                      }}>
+                      Rp476.480
+                    </Text>
+                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
+                      Rp.376.480
+                    </Text>
+                    <Button
+                      warning
+                      style={{
+                        borderRadius: 20,
+                        elevation: 0,
+                        marginTop: 10,
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                      }}>
+                      <Text style={{color: '#000'}}>Pilih</Text>
+                    </Button>
+                  </Col>
+                </Row>
+              </Grid>
             </CardItem>
           </Card>
         </View>

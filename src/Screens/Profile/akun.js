@@ -13,6 +13,7 @@ import {
   Col,
   Row,
   Icon,
+  Picker,
 } from 'native-base';
 import {TouchableOpacity, Image} from 'react-native';
 import Header from '../../Components/Header/parent/Header';
@@ -37,9 +38,21 @@ const Akun = props => {
             </TouchableOpacity>
           </View>
           <Form>
-            <Item floatingLabel style={Styles.marginTop}>
-              <Label>Title</Label>
-              <Input />
+            <Item picker style={{marginLeft: 10}}>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{width: undefined}}
+                placeholder="Select your SIM"
+                placeholderStyle={{color: '#bfc6ea'}}
+                placeholderIconColor="#007aff"
+                // selectedValue={this.state.selected2}
+                // onValueChange={this.onValueChange2.bind(this)}
+              >
+                <Picker.Item label="Tuan" value="tuan" />
+                <Picker.Item label="Nyonya" value="nyonya" />
+                <Picker.Item label="Nona" value="nyonya" />
+              </Picker>
             </Item>
             <Item floatingLabel style={Styles.marginTop}>
               <Label>Nama Depan</Label>
