@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { AsyncStorage } from 'react-native';
-// import { API_BASEURL } from 'react-native-dotenv'
+import { API_BASEURL } from 'react-native-dotenv'
 
 // export const getAuth = (data) => {
 //   return {
@@ -16,7 +16,7 @@ import { AsyncStorage } from 'react-native';
 export const getAuth = async data => {
   try {
     const result = await Axios.post(
-      `http://192.168.1.23:3300/api/v1/users/login`,
+      `${API_BASEURL}/api/v1/users/login`,
       data,
     );
     return {

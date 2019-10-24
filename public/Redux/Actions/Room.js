@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { AsyncStorage } from 'react-native';
-// import { API_BASEURL } from 'react-native-dotenv'
+import { API_BASEURL } from 'react-native-dotenv'
 
 export const getRoom = (options) => {
   return {
@@ -15,7 +15,7 @@ export const getRoom = (options) => {
       // })
       //   .then(result => resolve(result))
       //   .catch(error => reject(error));
-      Axios.get(`http://192.168.1.23:3300/api/v1/rooms?search=${search}`, {
+      Axios.get(`${API_BASEURL}/api/v1/rooms?search=${search}`, {
         headers: {
           Authorization: await AsyncStorage.getItem('auth-token'),
         },

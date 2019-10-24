@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { AsyncStorage } from 'react-native';
-// import { API_BASEURL } from 'react-native-dotenv'
+import { API_BASEURL } from 'react-native-dotenv'
 
 export const getFlight = () => {
   return {
@@ -15,7 +15,7 @@ export const getFlight = () => {
       // })
       //   .then(result => resolve(result))
       //   .catch(error => reject(error));
-      Axios.get(`http://192.168.1.23:3300/api/v1/flight`, {
+      Axios.get(`${API_BASEURL}/api/v1/flight`, {
         headers: {
           Authorization: await AsyncStorage.getItem('auth-token'),
         },
