@@ -1,98 +1,103 @@
-import React, { Component } from 'react';
-import {
-    Container, Content, Form, Item, Input, Label, View,
-    Tab, Tabs, Button, Grid, Col, Row, Text
-} from 'native-base';
-import { Image, TouchableOpacity } from 'react-native'
-import Styles from './Style.style'
-
-
+import React from 'react';
+import {Content, View, Button, Grid, Col, Icon, Text} from 'native-base';
+import {Image, TouchableOpacity} from 'react-native';
+import Styles from './Style.style';
 
 // import { Icon, grid } from 'react-native-vector-icons/dist/FontAwesome';
 
 const Ticket = props => {
-    return (
-        <Container>
-            <Content>
-                <View style={Styles.room}>
-                    <Grid>
-                        <Row>
-                            {/* <TouchableOpacity> */}
-                            <Col size={1}></Col>
-                            <Col size={5}><Text style={Styles.titleComponent}>Kota Asal</Text></Col>
-                            <Col size={1}></Col>
-                            {/* </TouchableOpacity> */}
-                        </Row>
-                        <Row>
-                            <Grid>
-                                <Col size={1}><Text>Kiri</Text></Col>
-                                <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>Pilih Kota Asal</Text></Col>
-                            </Grid>
-                        </Row>
+  return (
+    <Content>
+      <View style={Styles.room}>
+        <TouchableOpacity
+          style={Styles.inputBoxItem}
+          onPress={() => props.navigate('FindPlace')}>
+          <View style={Styles.inputBox}>
+            <Icon
+              type="MaterialCommunityIcons"
+              name="airplane-takeoff"
+              style={Styles.iconBox}
+            />
+            <View style={Styles.inputAreaBox}>
+              <Text style={Styles.titleBox}>Kota Asal</Text>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={Styles.titleDesc}>Pilih kota asal</Text>
+                <View style={Styles.dot} />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
 
-                        <Row>
-                            <Col size={1}></Col>
-                            <Col size={5}><Text style={Styles.titleComponent}>Kota Tujuan</Text></Col>
-                            <Col size={1}></Col>
-                        </Row>
-                        <Row>
-                            <Grid>
-                                <Col size={1}><Text>Kiri</Text></Col>
-                                <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>Pilih Kota Tujuan</Text></Col>
-                            </Grid>
-                        </Row>
-                        <Row>
-                            <Col size={1}></Col>
-                            <Col size={5}><Text style={Styles.titleComponent}>Tanggal Berangkat</Text></Col>
-                            <Col size={1}></Col>
-                        </Row>
-                        <Row>
-                            <Grid>
-                                <Col size={1}><Text>Kiri</Text></Col>
-                                <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>23 Oktober 2109</Text></Col>
+        <TouchableOpacity
+          style={Styles.inputBoxItem}
+          onPress={() => props.navigate('FindPlace')}>
+          <View style={Styles.inputBox}>
+            <Icon
+              type="MaterialCommunityIcons"
+              name="airplane-landing"
+              style={Styles.iconBox}
+            />
+            <View style={Styles.inputAreaBox}>
+              <Text style={Styles.titleBox}>Kota Tujuan</Text>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={Styles.titleDesc}>Pilih kota tujuan</Text>
+                <View style={Styles.dot} />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
 
-                            </Grid>
-                        </Row>
-                        <Row>
-                            <Col size={1}></Col>
-                            <Col size={5}><Text style={Styles.titleComponent}>Penumpang</Text></Col>
-                            <Col size={1}></Col>
-                        </Row>
-                        {/* Icon name='area-chart' style={grid.icon_green} /> */}
-                        <Row>
-                            <Grid>
-                                <Col size={1}><Text> Kiri</Text></Col>
-                                <Col size={5} style={Styles.borderComponent}><Text style={Styles.mainText}>1 Dewasa</Text></Col>
+        <TouchableOpacity
+          style={Styles.inputBoxItem}
+          onPress={() => props.navigate('FindPlace')}>
+          <View style={Styles.inputBox}>
+            <Icon type="AntDesign" name="calendar" style={Styles.iconBox} />
+            <View style={Styles.inputAreaBox}>
+              <Text style={Styles.titleBox}>Tanggal Berangkat</Text>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={Styles.titleDesc}>25 Oktober 2019</Text>
+                <View style={Styles.dot} />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
 
-                            </Grid>
-                        </Row>
-                    </Grid>
+        <TouchableOpacity
+          style={Styles.inputBoxItem}
+          onPress={() => props.navigate('FindPlace')}>
+          <View style={Styles.inputBox}>
+            <Icon type="Feather" name="users" style={Styles.iconBox} />
+            <View style={Styles.inputAreaBox}>
+              <Text style={Styles.titleBox}>Penumpang</Text>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={Styles.titleDesc}>1 Dewasa, 1 Anak, 1 Bayi</Text>
+                <View style={Styles.dot} />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
 
+        <Button full warning style={Styles.buttonCariKamar}>
+          <Text style={Styles.textCariKamar}>Cari Penerbangan</Text>
+        </Button>
 
-
-                    <Button full warning style={Styles.buttonCariKamar}>
-                        <Text style={Styles.textCariKamar}>Cari Penerbangan</Text>
-                    </Button>
-
-
-                    <View style={{ marginLeft: 50, marginRight: 30, marginTop: 20 }}>
-                        <Grid>
-                            <Col size={1}><Text style={{ fontSize: 12, color: '#b0b8b9' }}>Like</Text></Col>
-                            <Col size={6} ><Text style={{ fontSize: 12, color: '#b0b8b9' }}>Harga Final, Booking Murah, Transaksi Aman</Text></Col>
-                        </Grid>
-                    </View>
-
-                </View>
-                <View>
-                    <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View>
-                            <Image source={require('../../../../public/home/rooms.png')} />
-                        </View>
-                    </View>
-                </View>
-            </Content>
-        </Container >
-    );
-
-}
-export default Ticket
+        <View style={{marginLeft: 50, marginRight: 30, marginTop: 20}}>
+          <View style={{flexDirection: 'row'}}>
+            <Icon name="like2" type="AntDesign" style={{fontSize: 18}} />
+            <Text style={{fontSize: 12, color: '#b0b8b9', marginLeft: 5}}>
+              Harga Final, Booking Murah, Transaksi Aman
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View style={{flexDirection: 'row', flex: 1}}>
+          <View>
+            <Image source={require('../../../../public/home/rooms.png')} />
+          </View>
+        </View>
+      </View>
+    </Content>
+  );
+};
+export default Ticket;

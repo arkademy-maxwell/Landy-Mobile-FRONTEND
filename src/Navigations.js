@@ -38,7 +38,7 @@ const MainNavigator = createStackNavigator(
       Home: {
         screen: HomeNav,
         navigationOptions: {
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Cari',
           tabBarIcon: ({tintColor}) => (
             <View>
               <Icon
