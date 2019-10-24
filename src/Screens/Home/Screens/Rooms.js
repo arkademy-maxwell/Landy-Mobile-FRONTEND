@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Content,
@@ -17,7 +17,7 @@ import {
   Icon,
   tintColor,
 } from 'native-base';
-import {Image, TouchableOpacity} from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import Styles from './Style.style';
 
 
@@ -105,12 +105,12 @@ const Rooms = props => {
             }}>
             <Grid>
               <Col size={1}>
-                <Text style={{fontSize: 12, color: '#b0b8b9'}}>
-                  <Icon name="like2" type="AntDesign" style={{fontSize: 18}} />
+                <Text style={{ fontSize: 12, color: '#b0b8b9' }}>
+                  <Icon name="like2" type="AntDesign" style={{ fontSize: 18 }} />
                 </Text>
               </Col>
               <Col size={10}>
-                <Text style={{fontSize: 12, color: '#b0b8b9'}}>
+                <Text style={{ fontSize: 12, color: '#b0b8b9' }}>
                   Harga Final, Booking Murah, Transaksi Aman
                 </Text>
               </Col>
@@ -118,7 +118,7 @@ const Rooms = props => {
           </View>
         </View>
         <View>
-          <View style={{flexDirection: 'row', flex: 1}}>
+          <View style={{ flexDirection: 'row', flex: 1 }}>
             <View>
               <Image source={require('../../../../public/home/rooms.png')} />
             </View>
