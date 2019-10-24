@@ -1,8 +1,10 @@
 import React from 'react';
-import {Container, Content, View, Text, Grid, Col, Row} from 'native-base';
-import {TouchableOpacity} from 'react-native';
+import { Container, Content, View, Text, Grid, Col, Row } from 'native-base';
+import { TouchableOpacity } from 'react-native';
 import Header from '../../Components/Header/parent/Header';
 import LinearGradient from 'react-native-linear-gradient';
+import promo from '../../Assets/Images/promo.png'
+import Styles from './Properti.style'
 
 const Properti = props => {
   return (

@@ -20,6 +20,14 @@ import SplashScreen from './Screens/SplashScreen/SplashScreen';
 import Main from './Screens/Registration/main';
 import Login from './Screens/Registration/Login';
 import Properti from './Screens/Properti/Properti';
+import EmailRegister from './Screens/Registration/EmailRegister';
+import EmailAktivasi from './Screens/Registration/EmailAktivasi';
+import DaftarBiodata from './Screens/Registration/DaftarBiodata';
+import Akun from './Screens/Profile/akun';
+import ForgetPassword from './Screens/Registration/ForgetPassword/ForgetPassword';
+import resetPassword from './Screens/Registration/ForgetPassword/resetPassword';
+import ListRoom from './Screens/CariRoom/Screens/ListRoom';
+import DetailRoom from './Screens/CariRoom/Screens/DetailRoom';
 
 const MainNavigator = createStackNavigator(
   {
@@ -33,12 +41,20 @@ const MainNavigator = createStackNavigator(
     Menu,
     Properti,
     Promo,
+    EmailRegister,
+    EmailAktivasi,
+    DaftarBiodata,
+    Akun,
+    ForgetPassword,
+    resetPassword,
+    ListRoom,
+    DetailRoom,
     DetailPromo,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
         navigationOptions: {
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Cari',
           tabBarIcon: ({ tintColor }) => (
             <View>
               <Icon

@@ -63,6 +63,51 @@ const Menu = props => {
             </View>
           </View>
         </LinearGradient>
+        <View style={Styles.viewTextWelcome}>
+          <Text style={Styles.wrappTextWelcome}>
+            <View style={Styles.roundedActive}></View>
+            <Text style={Styles.welcome}> Selamat Datang,</Text>
+            <Text style={Styles.nameUser}> Muhammad Badrun</Text>
+          </Text>
+        </View>
+        <View style={Styles.bantuan}>
+          <View style={Styles.bantuanLogo}>
+            <Icon type="Feather" name="users" style={Styles.icon} />
+          </View>
+          <View style={Styles.bantuanBantuan}>
+            <Text>Travel Partner</Text>
+          </View>
+        </View>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Akun')}>
+          <View style={Styles.bantuan}>
+            <View style={Styles.bantuanLogo}>
+              <Icon type="AntDesign" name="user" style={Styles.icon} />
+            </View>
+            <View style={Styles.bantuanBantuan}>
+              <Text>Akun</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <View style={Styles.bantuan}>
+          <View style={Styles.bantuanLogo}>
+            <Icon type="EvilIcons" name="refresh" style={Styles.icon} />
+          </View>
+          <View style={Styles.bantuanBantuan}>
+            <Text>Refound</Text>
+          </View>
+        </View>
+        <View style={Styles.bantuan}>
+          <View style={Styles.bantuanLogo}>
+            <Icon
+              type="Ionicons"
+              name="ios-notifications-outline"
+              style={Styles.icon}
+            />
+          </View>
+          <View style={Styles.bantuanBantuan}>
+            <Text>Pengaturan Notifikasi</Text>
+          </View>
+        </View>
         <View style={Styles.bantuan}>
           <View style={Styles.bantuanLogo}>
             <Icon
@@ -79,7 +124,7 @@ const Menu = props => {
           <Text style={Styles.layananPelanggan}>Layanan Pelanggan</Text>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
-              <Icon type="Ionicons" name="ios-call" style={Styles.icon} />
+              <Icon type="AntDesign" name="phone" style={Styles.icon} />
             </View>
             <View style={{flex: 5}}>
               <View>
@@ -92,7 +137,7 @@ const Menu = props => {
           </View>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
-              <Icon type="Ionicons" name="ios-mail" style={Styles.icon} />
+              <Icon type="AntDesign" name="mail" style={Styles.icon} />
             </View>
             <View style={{flex: 5}}>
               <View>
@@ -105,11 +150,7 @@ const Menu = props => {
           </View>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
-              <Icon
-                type="FontAwesome5"
-                name="facebook-messenger"
-                style={Styles.icon}
-              />
+              <Icon type="AntDesign" name="message1" style={Styles.icon} />
             </View>
             <View style={{flex: 5}}>
               <View>
@@ -122,7 +163,11 @@ const Menu = props => {
           </View>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
-              <Icon type="Ionicons" name="ios-chatboxes" style={Styles.icon} />
+              <Icon
+                type="MaterialIcons"
+                name="chat-bubble-outline"
+                style={Styles.icon}
+              />
             </View>
             <View style={{flex: 5}}>
               <View>
@@ -138,7 +183,7 @@ const Menu = props => {
           <Text style={Styles.layananPelanggan}>Kerjasama</Text>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
-              <Icon type="Ionicons" name="home" style={Styles.icon} />
+              <Icon type="FontAwesome" name="building-o" style={Styles.icon} />
             </View>
             <View style={{flex: 4}}>
               <TouchableOpacity
@@ -152,7 +197,7 @@ const Menu = props => {
         </View>
         <View style={Styles.border} />
         <View style={Styles.tentang}>
-          <Text style={Styles.layananPelanggan}>Kerjasama</Text>
+          <Text style={Styles.layananPelanggan}>Tentang Landy Rooms App</Text>
           <View style={Styles.layananContent}>
             <View style={{flex: 1}}>
               <Icon

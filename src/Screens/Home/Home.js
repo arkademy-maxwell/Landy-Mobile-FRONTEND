@@ -1,16 +1,5 @@
 import React, {Component} from 'react';
-import {
-  Content,
-  Form,
-  Item,
-  Input,
-  Label,
-  View,
-  Tab,
-  Tabs,
-  Button,
-  Text,
-} from 'native-base';
+import {Content, View, Tab, Tabs} from 'native-base';
 
 // component
 import HeaderBanner from './Component/HeaderBanner';

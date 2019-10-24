@@ -49,7 +49,7 @@ const Login = props => {
 
   return (
     <Container>
-      <Header style={{ top: 20, backgroundColor: '#0091ef', elevation: 0 }}>
+      <Header style={{ top: 0, backgroundColor: '#0091ef', elevation: 0 }}>
         <Left>
           <Button transparent onPress={() => props.navigation.goBack()}>
             <Icon name="arrow-back" />
@@ -95,7 +95,7 @@ const Login = props => {
                 full
                 transparent
                 style={{ marginTop: 20, marginBottom: 30 }}
-                onPress={() => props.navigation.navigate('Login')}>
+                onPress={() => props.navigation.navigate('ForgetPassword')}>
                 <Text style={{ color: '#5ecbf5', fontSize: 12 }}>
                   LUPA PASSWORD?
                 </Text>
@@ -114,7 +114,9 @@ const Login = props => {
                   </Col>
                   <Col size={3}>
                     <TouchableOpacity
-                      onPress={() => props.navigation.navigate('Login')}>
+                      onPress={() =>
+                        props.navigation.navigate('EmailRegister')
+                      }>
                       <Text style={{ color: '#5ecbf5', fontSize: 12 }}>
                         DAFTAR
                       </Text>

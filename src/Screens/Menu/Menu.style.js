@@ -68,6 +68,28 @@ const styles = StyleSheet.create({
   icon: {
     color: '#99a3a4',
   },
+  viewTextWelcome: {
+    backgroundColor: '#efeff5',
+  },
+  roundedActive: {
+    width: 10,
+    height: 10,
+    backgroundColor: '#00aeef',
+    borderRadius: 20,
+  },
+  wrappTextWelcome: {
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 20,
+    fontSize: 13,
+  },
+  welcome: {
+    fontSize: 13,
+  },
+  nameUser: {
+    color: '#00aeef',
+    fontSize: 13,
+  },
 });
 
 export default styles;
