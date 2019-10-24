@@ -13,6 +13,8 @@ import {
   Col,
   Row,
   Image,
+  Picker,
+  Icon,
 } from 'native-base';
 import { TouchableOpacity, ImageBackground, ToastAndroid } from 'react-native';
 import Header from '../../Components/Header/parent/Header';
@@ -32,6 +34,10 @@ const DaftarBiodata = (props) => {
   useEffect(() => {
     setEmail(props.navigation.getParam('email'))
   }, [])
+
+  const handlePicker = value => {
+    setTitle_ID(value);
+  };
 
   const createForm = (data) => {
     const form = new FormData()
@@ -71,10 +77,21 @@ const DaftarBiodata = (props) => {
       <Content>
         <View style={{ marginLeft: 20, marginRight: 35, marginBottom: 20 }}>
           <Form>
-            {/* Pakai Picker */}
-            <Item floatingLabel>
-              <Label>Title</Label>
-              <Input onChangeText={text => setTitle_ID(text)} value={title_id} />
+            <Item picker style={{ marginLeft: 10 }}>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{ width: undefined }}
+                placeholder="Select your SIM"
+                placeholderStyle={{ color: '#bfc6ea' }}
+                placeholderIconColor="#007aff"
+                selectedValue={title_id}
+                onValueChange={(value) => handlePicker(value)}
+              >
+                <Picker.Item label="Tuan" value="1" />
+                <Picker.Item label="Nyonya" value="2" />
+                <Picker.Item label="Nona" value="3" />
+              </Picker>
             </Item>
             <Item floatingLabel>
               <Label>Nama Depan</Label>
@@ -151,7 +168,7 @@ const DaftarBiodata = (props) => {
           </Form>
         </View>
       </Content>
-    </Container>
+    </Container >
   );
 };
 export default DaftarBiodata;

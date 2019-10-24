@@ -28,6 +28,9 @@ import ForgetPassword from './Screens/Registration/ForgetPassword/ForgetPassword
 import resetPassword from './Screens/Registration/ForgetPassword/resetPassword';
 import ListRoom from './Screens/CariRoom/Screens/ListRoom';
 import DetailRoom from './Screens/CariRoom/Screens/DetailRoom';
+import BuatPesanan from './Screens/Pesanan/Screens/BuatPesanan';
+import KonfirmasiPesanan from './Screens/Pesanan/Screens/KonfirmasiPesanan/KonfirmasiPesanan';
+import MetodePembayaran from './Screens/Pesanan/Screens/MetodePembayaran/MetodePembayarn';
 
 const MainNavigator = createStackNavigator(
   {
@@ -50,6 +53,9 @@ const MainNavigator = createStackNavigator(
     ListRoom,
     DetailRoom,
     DetailPromo,
+    BuatPesanan,
+    KonfirmasiPesanan,
+    MetodePembayaran,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
@@ -101,7 +107,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'DaftarBiodata',
   },
 );
 
