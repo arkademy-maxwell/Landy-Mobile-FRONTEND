@@ -20,11 +20,9 @@ import Styles from './Menu.style';
 const LoginMenu = props => (
   <View>
     <View style={Styles.viewTextWelcome}>
-      <Text style={Styles.wrappTextWelcome}>
-        <View style={Styles.roundedActive} />
-        <Text style={Styles.welcome}>Selamat Datang, </Text>
-        <Text style={Styles.nameUser}>{props.name}</Text>
-      </Text>
+      <View style={Styles.roundedActive} />
+      <Text style={Styles.welcome}>Selamat Datang, </Text>
+      <Text style={Styles.nameUser}>{props.name}</Text>
     </View>
     <TouchableOpacity onPress={() => props.navigation.navigate('Akun')}>
       <View style={Styles.listView}>

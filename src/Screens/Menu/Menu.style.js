@@ -67,18 +67,17 @@ const styles = StyleSheet.create({
   },
   viewTextWelcome: {
     backgroundColor: '#efeff5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 80,
   },
   roundedActive: {
-    width: 10,
-    height: 10,
+    width: 8,
+    height: 8,
     backgroundColor: '#00aeef',
     borderRadius: 20,
-  },
-  wrappTextWelcome: {
-    textAlign: 'center',
-    marginTop: 20,
-    marginBottom: 20,
-    fontSize: 13,
+    marginRight: 5,
   },
   welcome: {
     fontSize: 13,

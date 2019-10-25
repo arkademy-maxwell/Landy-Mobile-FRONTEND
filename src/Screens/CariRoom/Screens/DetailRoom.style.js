@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   body: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 13,
     backgroundColor: '#00aeef',
-    width: 80,
+    width: 100,
     padding: 3,
     paddingLeft: 8,
     borderRadius: 5,
