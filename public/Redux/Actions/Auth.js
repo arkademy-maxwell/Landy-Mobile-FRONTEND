@@ -1,5 +1,4 @@
 import Axios from 'axios';
-import {AsyncStorage} from 'react-native';
 import {API_BASEURL} from 'react-native-dotenv';
 
 export const getAuth = async data => {
