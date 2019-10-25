@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   Container,
   Content,
@@ -16,30 +16,29 @@ import {
   Tabs,
   ScrollableTab,
 } from 'native-base';
-import {TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Header from '../components/HeaderDetail';
 import Style from './Termurah.style';
 import Icon from 'react-native-vector-icons/Ionicons';
 import RPenerbangan from '../components/RPenerbangan';
 import RHarga from '../components/RHarga';
-
 const DetailPenerbangan = props => {
   return (
-    <Container style={{backgroundColor: '#ecf0f1'}}>
+    <Container style={{ backgroundColor: '#ecf0f1' }}>
       <Header {...props} />
       <Content>
-        <View style={{flexDirection: 'row', margin: 5}}>
+        <View style={{ flexDirection: 'row', margin: 5 }}>
           <Tabs
             tabBarUnderlineStyle={{
               borderBottomWidth: 2,
               borderColor: '#1bb6f1',
             }}
-            tabContainerStyle={{elevation: 0}}>
+            tabContainerStyle={{ elevation: 0 }}>
             <Tab
               heading="Rincian Penerbangan"
-              tabStyle={{backgroundColor: '#fff'}}
-              textStyle={{color: '#000'}}
-              activeTabStyle={{backgroundColor: '#fff'}}
+              tabStyle={{ backgroundColor: '#fff' }}
+              textStyle={{ color: '#000' }}
+              activeTabStyle={{ backgroundColor: '#fff' }}
               activeTextStyle={{
                 color: '#d0d4d7',
                 fontWeight: 'normal',
@@ -48,9 +47,9 @@ const DetailPenerbangan = props => {
             </Tab>
             <Tab
               heading="Rincian Harga"
-              tabStyle={{backgroundColor: '#fff'}}
-              textStyle={{color: '#000'}}
-              activeTabStyle={{backgroundColor: '#fff'}}
+              tabStyle={{ backgroundColor: '#fff' }}
+              textStyle={{ color: '#000' }}
+              activeTabStyle={{ backgroundColor: '#fff' }}
               activeTextStyle={{
                 color: '#d0d4d7',
                 fontWeight: 'normal',
@@ -61,9 +60,9 @@ const DetailPenerbangan = props => {
         </View>
         {/* <DataPalingAkhir navigation={props.navigation.navigate} /> */}
       </Content>
-      <View style={{alignItems: 'center', bottom: 0}}>
+      <View style={{ alignItems: 'center', bottom: 0 }}>
         <Button full warning>
-          <Text style={{color: 'black'}}>PILIH PENERBANGAN PERGI</Text>
+          <Text style={{ color: 'black' }}>PILIH PENERBANGAN PERGI</Text>
         </Button>
       </View>
     </Container>

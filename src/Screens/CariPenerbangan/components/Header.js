@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Header,
@@ -24,8 +24,8 @@ const Headers = props => {
           </Button>
         </Left>
         <Body>
-          <Title style={{fontSize: 18}}>Penerbangan Pergi</Title>
-          <Text style={{color: 'white', fontSize: 11}}>
+          <Title style={{ fontSize: 18 }}>Penerbangan</Title>
+          <Text style={{ color: 'white', fontSize: 11 }}>
             26 Okt 2019, 1 Orang
           </Text>
         </Body>
@@ -36,33 +36,33 @@ const Headers = props => {
             <Icon
               type="MaterialCommunityIcons"
               name="ticket"
-              style={{color: '#fdcf1b'}}
+              style={{ color: '#fdcf1b' }}
             />
           </Button>
         </Right>
       </Header>
       <View>
         <List>
-          <ListItem itemDivider style={{backgroundColor: '#0185EF'}}>
+          <ListItem itemDivider style={{ backgroundColor: '#0185EF' }}>
             <Body style={Style.borderWith}>
-              <View style={{flexDirection: 'row', marginHorizontal: 50}}>
-                <Text style={{color: 'white', marginRight: 10}}>Jakarta</Text>
-                <View style={{marginVertical: -2}}>
+              <View style={{ flexDirection: 'row', marginHorizontal: 50 }}>
+                <Text style={{ color: 'white', marginRight: 10 }}>All Routes</Text>
+                {/* <View style={{ marginVertical: -2 }}>
                   <Icon
                     name="ios-arrow-round-forward"
-                    style={{color: 'white'}}
+                    style={{ color: 'white' }}
                   />
                 </View>
-                <Text style={{color: 'white', marginHorizontal: 10}}>Bali</Text>
+                <Text style={{ color: 'white', marginHorizontal: 10 }}>Bali</Text> */}
               </View>
             </Body>
             <Right>
               <View
-                style={{size: 40, marginHorizontal: 5, marginVertical: -18}}>
+                style={{ size: 40, marginHorizontal: 5, marginVertical: -18 }}>
                 <Icon
                   type="MaterialCommunityIcons"
                   name="airplane-takeoff"
-                  style={{color: 'white'}}
+                  style={{ color: 'white' }}
                 />
               </View>
             </Right>

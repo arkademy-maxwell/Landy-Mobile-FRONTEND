@@ -6,7 +6,7 @@ export const getRoom = () => {
   return {
     type: 'GET_ROOM',
     payload: new Promise((resolve, reject) => {
-      Axios.get(`${API_BASEURL}/api/v1/rooms`)
+      Axios.get(`${API_BASEURL}/api/v1/rooms/search`)
         .then(result => resolve(result))
         .catch(error => reject(error));
     }),

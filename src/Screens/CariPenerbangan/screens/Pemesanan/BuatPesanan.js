@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Content,
@@ -19,29 +19,53 @@ import {
   Body,
   Right,
 } from 'native-base';
-import {TouchableOpacity, Image, ScrollView} from 'react-native';
+import { TouchableOpacity, Image, ScrollView } from 'react-native';
 import HeaderParent from '../../../../Components/Header/parent/Header';
 import HeaderDotted from '../../../Pesanan/Component/Header';
 import Styles from './BuatPesanan.style';
+
+import Rupiah from 'rupiah-format'
+
 const BuatPesananPesawat = props => {
+  const [Origin, setOrigin] = useState('')
+  const [Destination, setDestination] = useState('')
+  const [OriginCode, setOriginCode] = useState('')
+  const [DestinationCode, setDestinationCode] = useState('')
+  const [Price, setPrice] = useState('')
+  const [Airlines, setAirlines] = useState('')
+  const [FlightID, setFlightID] = useState('')
+
+  const setParam = () => {
+    setOrigin(props.navigation.getParam('origin'))
+    setDestination(props.navigation.getParam('destination'))
+    setOriginCode(props.navigation.getParam('origin_code'))
+    setDestinationCode(props.navigation.getParam('destination_code'))
+    setPrice(props.navigation.getParam('price'))
+    setAirlines(props.navigation.getParam('airlines'))
+    setFlightID(props.navigation.getParam('id'))
+  }
+
+  useEffect(() => {
+    setParam()
+  })
   return (
     <Container>
       <HeaderParent menu="Pemesanan Anda" icon="arrow-back" {...props} />
       <HeaderDotted a={props.active} />
       <Content>
-        <View style={{marginLeft: 20, marginRight: 35, marginBottom: 20}}>
+        <View style={{ marginLeft: 20, marginRight: 35, marginBottom: 20 }}>
           <Text style={Styles.title}>INFORMASI KONTAK</Text>
           <Form>
-            <Item picker style={{marginLeft: 10}}>
+            <Item picker style={{ marginLeft: 10 }}>
               <Picker
                 mode="dropdown"
                 iosIcon={<Icon name="arrow-down" />}
-                style={{width: undefined}}
+                style={{ width: undefined }}
                 placeholder="Select your SIM"
-                placeholderStyle={{color: '#bfc6ea'}}
+                placeholderStyle={{ color: '#bfc6ea' }}
                 placeholderIconColor="#007aff"
-                // selectedValue={this.state.selected2}
-                // onValueChange={this.onValueChange2.bind(this)}
+              // selectedValue={this.state.selected2}
+              // onValueChange={this.onValueChange2.bind(this)}
               >
                 <Picker.Item label="Tuan" value="tuan" />
                 <Picker.Item label="Nyonya" value="nyonya" />
@@ -79,7 +103,7 @@ const BuatPesananPesawat = props => {
             </Item>
           </Form>
         </View>
-        <View style={{backgroundColor: '#ecf0f1'}}>
+        <View style={{ backgroundColor: '#ecf0f1' }}>
           <View style={Styles.wrapDetailRoom}>
             <Text style={Styles.room}>Kamar</Text>
             <Card style={Styles.card}>
@@ -87,8 +111,8 @@ const BuatPesananPesawat = props => {
                 <Row>
                   <Col size={2}></Col>
                   <Col size={6}>
-                    <View style={{marginLeft: 20}}>
-                      <Text style={{fontSize: 12}}>Jakarta - Surabaya</Text>
+                    <View style={{ marginLeft: 20 }}>
+                      <Text style={{ fontSize: 12 }}>{Origin} - {Destination}</Text>
                     </View>
                   </Col>
                 </Row>
@@ -99,12 +123,12 @@ const BuatPesananPesawat = props => {
                   <Card style={Styles.cardInside}>
                     <Grid>
                       <Col size={5}>
-                        <Text style={{fontSize: 12}}>
-                          Citylink (Dewasa) (x1)
+                        <Text style={{ fontSize: 12 }}>
+                          {Airlines} (Dewasa) (x1)
                         </Text>
                       </Col>
                       <Col size={2}>
-                        <Text style={{fontSize: 12}}>Rp.150000</Text>
+                        <Text style={{ fontSize: 12 }}>{Rupiah.convert(Price)}</Text>
                       </Col>
                     </Grid>
                   </Card>
@@ -130,7 +154,7 @@ const BuatPesananPesawat = props => {
                             <Icon
                               type="Ionicons"
                               name="md-arrow-forward"
-                              style={{color: '#00aeef', alignSelf: 'flex-end'}}
+                              style={{ color: '#00aeef', alignSelf: 'flex-end' }}
                             />
                           </Col>
                         </Row>
@@ -144,20 +168,28 @@ const BuatPesananPesawat = props => {
         </View>
       </Content>
       <View style={Styles.wrapChoose}>
-        <Grid style={{marginLeft: 20, marginRight: 20}}>
-          <Row style={{alignItems: 'center'}}>
-            <Col size={5} style={{alignItems: 'flex-start'}}>
-              <Text style={{fontSize: 12}}>Total Pembayaran</Text>
-              <Text style={{fontSize: 15, color: '#427f01'}}>Rp.150000</Text>
+        <Grid style={{ marginLeft: 20, marginRight: 20 }}>
+          <Row style={{ alignItems: 'center' }}>
+            <Col size={5} style={{ alignItems: 'flex-start' }}>
+              <Text style={{ fontSize: 12 }}>Total Pembayaran</Text>
+              <Text style={{ fontSize: 15, color: '#427f01' }}>{Rupiah.convert(Price)}</Text>
             </Col>
             <Col size={2}>
               <Button
                 warning
                 style={Styles.buttonChoose}
                 onPress={() =>
-                  props.navigation.navigate('KonfirmasiPesananPesawat')
+                  props.navigation.navigate('KonfirmasiPesananPesawat', {
+                    id: FlightID,
+                    airlines: Airlines,
+                    origin: Origin,
+                    destination: Destination,
+                    origin_code: OriginCode,
+                    destination_code: DestinationCode,
+                    price: Price
+                  })
                 }>
-                <Text style={{color: '#000'}}>Lanjut</Text>
+                <Text style={{ color: '#000', fontSize: 12 }}>Lanjut</Text>
               </Button>
             </Col>
           </Row>

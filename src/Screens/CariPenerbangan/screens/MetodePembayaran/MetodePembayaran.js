@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Container,
   Content,
@@ -20,7 +20,16 @@ import {TouchableOpacity, Image} from 'react-native';
 import Header from '../../../../Components/Header/parent/Header';
 import HeaderDotted from '../../../Pesanan/Component/Header';
 import Styles from './MetodePembayaran.style';
+
+import Rupiah from 'rupiah-format'
+
 const MetodePembayaran = props => {
+  const [Price, setPrice] = useState('')
+
+  useEffect(() => {
+    setPrice(props.navigation.getParam('price'))
+  })
+
   return (
     <Container>
       <Header menu="Metode Pembayaran" icon="arrow-back" {...props} />
@@ -44,7 +53,7 @@ const MetodePembayaran = props => {
                   <Text style={Styles.title}>JUMLAH YANG AKAN DIBAYAR</Text>
                 </Row>
                 <Row>
-                  <Text style={Styles.amount}>Rp.1500000</Text>
+                  <Text style={Styles.amount}>{Rupiah.convert(Price)}</Text>
                 </Row>
               </Col>
               <Col size={2} style={{color: '#00aeef', alignItems: 'flex-end'}}>
