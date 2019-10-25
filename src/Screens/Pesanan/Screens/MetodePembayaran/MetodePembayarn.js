@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Content,
@@ -16,16 +16,25 @@ import {
   Icon,
   CardItem,
 } from 'native-base';
-import {TouchableOpacity, Image} from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 import Header from '../../../../Components/Header/parent/Header';
 import HeaderDotted from '../../Component/Header';
 import Styles from './MetodePembayaran.style';
+
+import Rupiah from 'rupiah-format'
+
 const MetodePembayaran = props => {
+  const [Price, setPrice] = useState('');
+
+  useEffect(() => {
+    setPrice(props.navigation.getParam('price'))
+  })
+
   return (
     <Container>
       <Header menu="Metode Pembayaran" icon="arrow-back" {...props} />
       <HeaderDotted />
-      <Content style={{backgroundColor: '#ecf0f1'}}>
+      <Content style={{ backgroundColor: '#ecf0f1' }}>
         <View>
           <Text
             style={{
@@ -44,18 +53,18 @@ const MetodePembayaran = props => {
                   <Text style={Styles.title}>JUMLAH YANG AKAN DIBAYAR</Text>
                 </Row>
                 <Row>
-                  <Text style={Styles.amount}>Rp.1500000</Text>
+                  <Text style={Styles.amount}>{Rupiah.convert(Price)}</Text>
                 </Row>
               </Col>
-              <Col size={2} style={{color: '#00aeef', alignItems: 'flex-end'}}>
+              <Col size={2} style={{ color: '#00aeef', alignItems: 'flex-end' }}>
                 {/* <TouchableOpacity onPress={()=> props.navigation.navigate('Konfir')}> */}
-                <Text style={{color: '#00aeef', fontSize: 14}}>Pesanan</Text>
+                <Text style={{ color: '#00aeef', fontSize: 14 }}>Pesanan</Text>
                 {/* </TouchableOpacity> */}
               </Col>
             </Grid>
           </Card>
         </View>
-        <View style={{marginLeft: 10, marginRight: 10, marginBottom: 20}}>
+        <View style={{ marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
           <Text
             style={{
               fontSize: 13,
@@ -82,12 +91,12 @@ const MetodePembayaran = props => {
           <Card style={Styles.wrapperChooseMethod}>
             <Grid>
               <Row>
-                <Text style={{fontSize: 15, color: '#7f8c8d'}}>
+                <Text style={{ fontSize: 15, color: '#7f8c8d' }}>
                   Pembatalan Transaksi
                 </Text>
               </Row>
               <Row>
-                <Text style={{fontSize: 10, color: '#7f8c8d'}}>
+                <Text style={{ fontSize: 10, color: '#7f8c8d' }}>
                   Pembatalan ini berlaku untuk seluruh produk yang ada di dalam
                   transaksi ini
                 </Text>
@@ -103,12 +112,12 @@ const MetodePembayaran = props => {
                   <Icon
                     type="AntDesign"
                     name="close"
-                    style={{fontSize: 15, color: '#ff5722'}}
+                    style={{ fontSize: 15, color: '#ff5722' }}
                   />
                 </Col>
                 <Col size={10}>
                   <TouchableOpacity>
-                    <Text style={{fontSize: 15, color: '#ff5722'}}>
+                    <Text style={{ fontSize: 15, color: '#ff5722' }}>
                       BATALKAN TRANSAKSI
                     </Text>
                   </TouchableOpacity>

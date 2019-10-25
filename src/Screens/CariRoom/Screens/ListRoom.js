@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Content,
@@ -13,14 +13,16 @@ import {
   View,
   Card,
 } from 'native-base';
-import {TouchableOpacity, Image} from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 import Header from '../Components/Header';
 import Style from './ListRoom.style';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Redux
-import {useDispatch, useSelector} from 'react-redux';
-import {getRoom} from '../../../../public/Redux/Actions/Room';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRoom } from '../../../../public/Redux/Actions/Room';
+
+import Rupiah from 'rupiah-format'
 
 const ListRoom = props => {
   const [Data, setData] = useState([]);
@@ -38,78 +40,76 @@ const ListRoom = props => {
   }, []);
 
   return (
-    <Container style={{backgroundColor: '#ecf0f1'}}>
+    <Container style={{ backgroundColor: '#ecf0f1' }}>
       <Header {...props} />
       <View>
-        <View style={{backgroundColor: '#fff'}}>
-          <View style={{margin: 10}}>
+        <View style={{ backgroundColor: '#fff' }}>
+          <View style={{ margin: 10 }}>
             <Image
               source={require('../../../../public/register/Capture.png')}
-              style={{width: '100%'}}
+              style={{ width: '100%' }}
             />
           </View>
         </View>
       </View>
       <Content>
         <View>
-          <TouchableOpacity>
-            <Card style={Style.marginBottom}>
-              <ListItem thumbnail>
-                <Left>
-                  <View>
-                    <Thumbnail
-                      style={{marginTop: 30}}
-                      square
-                      source={require('../../../Assets/Images/ListRoom.jpg')}
-                    />
-                    <Icon
-                      style={{marginTop: 15, marginBottom: 10}}
-                      size={15}
-                      color={'#74D3F6'}
-                      type="Ionicons"
-                      name="ios-thumbs-up">
-                      <Text> </Text>
-                      <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                        Excellent
-                      </Text>
-                    </Icon>
-                  </View>
-                </Left>
-                <Body style={Style.borderWith}>
-                  {/* <Text>{item.room}</Text> */}
-                  <Text note numberOfLines={1}>
-                    {/* {item.locations} */}
-                  </Text>
-                </Body>
-                <Right style={Style.borderWith}>
-                  <Text style={Style.textList}>Harga/malam</Text>
-                  <Text
-                    style={{
-                      textDecorationLine: 'line-through',
-                      fontSize: 11,
-                      marginRight: 15,
-                    }}>
-                    15000000
-                    {/* {item.price} */}
-                  </Text>
-                  <Button
-                    style={Style.buttonPrice}
-                    onPress={() => props.navigation.navigate('DetailRoom')}>
-                    {/* , {
-                            id: item.id,
-                          } */}
-                    {/* <Text style={{color: '#454643'}}>{item.price}</Text> */}
-                    <Text>jsdnm</Text>
-                  </Button>
-                </Right>
-              </ListItem>
-            </Card>
-          </TouchableOpacity>
-          {/* {Data.map(item => {
+
+          {Data.map(item => {
             return (
-             
+              <TouchableOpacity>
+                <Card style={Style.marginBottom}>
+                  <ListItem thumbnail>
+                    <Left>
+                      <View>
+                        <Thumbnail
+                          style={{ marginTop: 30 }}
+                          square
+                          source={require('../../../Assets/Images/ListRoom.jpg')}
+                        />
+                        <Icon
+                          style={{ marginTop: 15, marginBottom: 10 }}
+                          size={15}
+                          color={'#74D3F6'}
+                          type="Ionicons"
+                          name="ios-thumbs-up">
+                          <Text> </Text>
+                          <Text style={{ fontSize: 11, color: '#74D3F6' }}>
+                            Excellent
+                        </Text>
+                        </Icon>
+                      </View>
+                    </Left>
+                    <Body style={Style.borderWith}>
+                      <Text>{item.room}</Text>
+                      <Text note numberOfLines={1}>
+                        {item.locations}
+                      </Text>
+                    </Body>
+                    <Right style={Style.borderWith}>
+                      <Text style={Style.textList}>Harga/malam</Text>
+                      <Text
+                        style={{
+                          textDecorationLine: 'line-through',
+                          fontSize: 11,
+                          marginRight: 15,
+                        }}>
+                        {Rupiah.convert(item.price)}
+                      </Text>
+                      <Button
+                        style={Style.buttonPrice}
+                        onPress={() => props.navigation.navigate('DetailRoom', {
+                          id: item.id,
+                        })}>
+
+                        <Text style={{ color: '#454643' }}>{Rupiah.convert(item.price)}</Text>
+                      </Button>
+                    </Right>
+                  </ListItem>
+                </Card>
+              </TouchableOpacity>
             );
-          })} */}
+          })}
         </View>
       </Content>
     </Container>

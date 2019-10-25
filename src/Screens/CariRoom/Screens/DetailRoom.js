@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Content,
@@ -33,7 +33,8 @@ import LinearGradient from 'react-native-linear-gradient';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
 import Axios from 'axios';
-import {API_BASEURL} from 'react-native-dotenv';
+import { API_BASEURL } from 'react-native-dotenv';
+import Rupiah from 'rupiah-format'
 
 const DetailRoom = props => {
   const [Room, setRoom] = useState('');
@@ -64,14 +65,14 @@ const DetailRoom = props => {
   return (
     <Container style={Styles.body}>
       <Content>
-        <View style={{height: 232}}>
+        <View style={{ height: 232 }}>
           <View style={Styles.linearGradient}>
             <Grid>
               <Col>
                 <Icon
                   type="Ionicons"
                   name="md-arrow-back"
-                  style={{color: '#fff'}}
+                  style={{ color: '#fff' }}
                 />
               </Col>
               <Col>
@@ -120,10 +121,10 @@ const DetailRoom = props => {
           </Col>
         </Grid>
 
-        <View style={{margin: 5}}>
+        <View style={{ margin: 5 }}>
           <Card style={Styles.card}>
             <CardItem>
-              <Grid style={{marginLeft: 10}}>
+              <Grid style={{ marginLeft: 10 }}>
                 <Col size={2}>
                   <View style={Styles.map}></View>
                   <TouchableOpacity
@@ -143,7 +144,7 @@ const DetailRoom = props => {
                   </TouchableOpacity>
                 </Col>
                 <Col size={6}>
-                  <View style={{marginLeft: 20}}>
+                  <View style={{ marginLeft: 20 }}>
                     <Text style={Styles.labelLandyRooms}>Landy Rooms</Text>
                     <Text style={Styles.titleRoom}>{Room}</Text>
                     <Text style={Styles.subTitleRoom}>{Address}</Text>
@@ -154,14 +155,14 @@ const DetailRoom = props => {
             <CardItem style={Styles.cardBorder} />
             <CardItem>
               <Grid>
-                <Row style={{marginBottom: 20}}>
-                  <Text style={{color: '#7f8c8d', fontSize: 12}}>
+                <Row style={{ marginBottom: 20 }}>
+                  <Text style={{ color: '#7f8c8d', fontSize: 12 }}>
                     STANDARD KENYAMANAN
                   </Text>
                 </Row>
                 <Row>
                   <Col>
-                    <View style={{width: '100%'}}>
+                    <View style={{ width: '100%' }}>
                       <Icon
                         type="AntDesign"
                         name="wifi"
@@ -171,7 +172,7 @@ const DetailRoom = props => {
                     </View>
                   </Col>
                   <Col>
-                    <View style={{width: '100%'}}>
+                    <View style={{ width: '100%' }}>
                       <Icon type="Entypo" name="tv" style={Styles.iconColor} />
                       <Text style={Styles.titleIconFacility}>
                         TV Layar Datar
@@ -179,7 +180,7 @@ const DetailRoom = props => {
                     </View>
                   </Col>
                   <Col>
-                    <View style={{width: '100%'}}>
+                    <View style={{ width: '100%' }}>
                       <Icon
                         type="FontAwesome"
                         name="shower"
@@ -189,13 +190,13 @@ const DetailRoom = props => {
                     </View>
                   </Col>
                   <Col>
-                    <View style={{width: '100%'}}>
+                    <View style={{ width: '100%' }}>
                       <Icon type="Entypo" name="air" style={Styles.iconColor} />
                       <Text style={Styles.titleIconFacility}>AC</Text>
                     </View>
                   </Col>
                   <Col>
-                    <View style={{width: '100%'}}>
+                    <View style={{ width: '100%' }}>
                       <Icon
                         type="FontAwesome"
                         name="bed"
@@ -228,8 +229,8 @@ const DetailRoom = props => {
           </Card>
 
           <Card style={Styles.cardTwo}>
-            <Grid style={{padding: 15}}>
-              <Text style={{fontSize: 15, color: '#7f8c8d', marginBottom: 5}}>
+            <Grid style={{ padding: 15 }}>
+              <Text style={{ fontSize: 15, color: '#7f8c8d', marginBottom: 5 }}>
                 INFORMASI PENTING
               </Text>
               <Row>
@@ -243,16 +244,16 @@ const DetailRoom = props => {
                     }}></View>
                 </Col> */}
                 <Col size={15}>
-                  <Text style={{fontSize: 12}}>{Description}</Text>
+                  <Text style={{ fontSize: 12 }}>{Description}</Text>
                 </Col>
               </Row>
             </Grid>
           </Card>
           <Card style={Styles.cardFour}>
-            <Grid style={{padding: 15}}>
+            <Grid style={{ padding: 15 }}>
               <Row>
                 <Text
-                  style={{fontSize: 15, color: '#7f8c8d', marginBottom: 20}}>
+                  style={{ fontSize: 15, color: '#7f8c8d', marginBottom: 20 }}>
                   KETERSEDIAAN KAMAR
                 </Text>
               </Row>
@@ -279,17 +280,17 @@ const DetailRoom = props => {
             </Grid>
             <Grid>
               <Col>
-                <ListItem style={{borderColor: '#fff'}}>
+                <ListItem style={{ borderColor: '#fff' }}>
                   <Body>
-                    <Text style={{textAlign: 'center', fontSize: 13}}>
+                    <Text style={{ textAlign: 'center', fontSize: 13 }}>
                       Tampilkan Harga 10 Malam
                     </Text>
                   </Body>
-                  <CheckBox style={{borderColor: '#7f8c8d', borderRadius: 2}} />
+                  <CheckBox style={{ borderColor: '#7f8c8d', borderRadius: 2 }} />
                 </ListItem>
               </Col>
             </Grid>
-            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
+            <CardItem style={{ borderTopWidth: 1, borderColor: '#ecf0f1' }}>
               <Grid>
                 <Row>
                   <Text
@@ -303,61 +304,61 @@ const DetailRoom = props => {
                 </Row>
                 <Row>
                   <Col>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                    <Row style={{ alignItems: 'center', marginTop: 15 }}>
                       <Col size={1}>
                         <Icon
                           type="MaterialIcons"
                           name="free-breakfast"
-                          style={{fontSize: 15, color: '#6e9d3c'}}
+                          style={{ fontSize: 15, color: '#6e9d3c' }}
                         />
                       </Col>
                       <Col size={6}>
-                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
+                        <Text style={{ fontSize: 13, color: '#6e9d3c' }}>
                           Sarapan Gratis
                         </Text>
                       </Col>
                     </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                    <Row style={{ alignItems: 'center', marginTop: 15 }}>
                       <Col size={1}>
                         <Icon
                           type="Zocial"
                           name="guest"
-                          style={{fontSize: 15}}
+                          style={{ fontSize: 15 }}
                         />
                       </Col>
                       <Col size={6}>
-                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
+                        <Text style={{ fontSize: 13 }}>2 Tamu / kamar</Text>
                       </Col>
                     </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                    <Row style={{ alignItems: 'center', marginTop: 15 }}>
                       <Col size={1}>
                         <Icon
                           type="Ionicons"
                           name="ios-bed"
-                          style={{fontSize: 15}}
+                          style={{ fontSize: 15 }}
                         />
                       </Col>
                       <Col size={6}>
-                        <Text style={{fontSize: 13}}>Twin</Text>
+                        <Text style={{ fontSize: 13 }}>Twin</Text>
                       </Col>
                     </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
+                    <Row style={{ alignItems: 'center', marginTop: 15 }}>
                       <Col size={1}>
                         <Icon
                           type="Entypo"
                           name="lock"
-                          style={{fontSize: 15}}
+                          style={{ fontSize: 15 }}
                         />
                       </Col>
                       <Col size={6}>
-                        <Text style={{fontSize: 13}}>
+                        <Text style={{ fontSize: 13 }}>
                           Tidak dapat dibatalkan
                         </Text>
                       </Col>
                     </Row>
                   </Col>
-                  <Col style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
+                  <Col style={{ alignItems: 'center' }}>
+                    <Text style={{ fontSize: 13 }}>Harga Per Malam</Text>
                     {/* <Text
                       style={{
                         fontSize: 13,
@@ -365,8 +366,8 @@ const DetailRoom = props => {
                       }}>
                       Rp476.480
                     </Text> */}
-                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
-                      {Price}
+                    <Text style={{ fontSize: 17, color: '#6e9d3c' }}>
+                      {Rupiah.convert(Price)}
                     </Text>
                     <Button
                       warning
@@ -378,8 +379,13 @@ const DetailRoom = props => {
                         paddingRight: 10,
                         backgroundColor: '#ffcb00',
                       }}
-                      onPress={() => props.navigation.navigate('BuatPesanan')}>
-                      <Text style={{color: '#000'}}>Pilih</Text>
+                      onPress={() => props.navigation.navigate('BuatPesanan', {
+                        id: RoomID,
+                        room: Room,
+                        address: Address,
+                        price: Price
+                      })}>
+                      <Text style={{ color: '#000' }}>Pilih</Text>
                     </Button>
                   </Col>
                 </Row>
@@ -389,12 +395,12 @@ const DetailRoom = props => {
         </View>
       </Content>
       <View style={Styles.wrapChoose}>
-        <Grid style={{marginLeft: 20, marginRight: 20}}>
-          <Row style={{alignItems: 'center'}}>
-            <Col size={3} style={{alignItems: 'flex-start'}}>
-              <Text style={{fontSize: 12}}>Pesan kamar mulai dari</Text>
-              <Text style={{fontSize: 15, color: '#427f01'}}>Rp.150000</Text>
-              <Text style={{fontSize: 13, color: '#97a1a2'}}>
+        <Grid style={{ marginLeft: 20, marginRight: 20 }}>
+          <Row style={{ alignItems: 'center' }}>
+            <Col size={3} style={{ alignItems: 'flex-start' }}>
+              <Text style={{ fontSize: 12 }}>Pesan kamar mulai dari</Text>
+              <Text style={{ fontSize: 15, color: '#427f01' }}>{Rupiah.convert(Price)}</Text>
+              <Text style={{ fontSize: 13, color: '#97a1a2' }}>
                 (Harga nett per malam)
               </Text>
             </Col>
@@ -402,8 +408,13 @@ const DetailRoom = props => {
               <Button
                 warning
                 style={Styles.buttonChoose}
-                onPress={() => props.navigation.navigate('KonfirmasiPesanan')}>
-                <Text style={{color: '#000'}}>Pilih Kamar</Text>
+                onPress={() => props.navigation.navigate('BuatPesanan', {
+                  id: RoomID,
+                  room: Room,
+                  address: Address,
+                  price: Price
+                })}>
+                <Text style={{ color: '#000' }}>Pilih Kamar</Text>
               </Button>
             </Col>
           </Row>
