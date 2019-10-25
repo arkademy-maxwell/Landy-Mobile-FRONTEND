@@ -27,6 +27,8 @@ import Styles from './Login.style';
 import { useDispatch } from 'react-redux'
 import { getAuth } from '../../../public/Redux/Actions/Auth'
 import { AsyncStorage, ToastAndroid } from 'react-native'
+import { API_BASEURL } from 'react-native-dotenv'
+import Axios from 'axios'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -37,13 +39,14 @@ const Login = props => {
 
   const submitLogin = async () => {
     const result = await getAuth(data)
-    if (result !== 'undefined') {
+    if (result.payload.success === 200) {
       dispatch(result)
       AsyncStorage.setItem('auth-token', result.payload.token)
       ToastAndroid.show('Login Success!', ToastAndroid.SHORT)
       props.navigation.navigate('Menu')
-    } else {
-      ToastAndroid.show('Alamat email atau password tidak valid!', ToastAndroid.SHORT)
+    }
+    else {
+      ToastAndroid.show('Login Failed! Username/Password is invalid!', ToastAndroid.LONG)
     }
   }
 
