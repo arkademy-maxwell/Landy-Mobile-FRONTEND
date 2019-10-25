@@ -23,45 +23,41 @@ const Rooms = props => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={Styles.inputBoxItem}
-          onPress={() => props.navigate('FindPlace')}>
-          <View style={Styles.inputBox}>
-            <Icon type="AntDesign" name="calendar" style={Styles.iconBox} />
-            <View style={Styles.inputAreaBox}>
-              <Text style={Styles.titleBox}>Check-in</Text>
-              <View style={{flexDirection: 'row'}}>
-                <DatePicker
-                  // defaultDate={new Date(2019, 10, 4)}
-                  minimumDate={new Date()}
-                  maximumDate={new Date(2019, 12, 29)}
-                  locale={'en'}
-                  timeZoneOffsetInMinutes={undefined}
-                  modalTransparent={false}
-                  animationType={'fade'}
-                  androidMode={'calendar'}
-                  supportedOrientations={'Landscape'}
-                  placeHolderText="Select date"
-                  textStyle={{
-                    fontSize: 16,
-                    fontWeight: 'bold',
-                    marginLeft: -10,
-                    marginTop: -10,
-                  }}
-                  placeHolderTextStyle={{
-                    fontSize: 16,
-                    fontWeight: 'bold',
-                    marginLeft: -10,
-                    marginTop: -10,
-                  }}
-                  // onDateChange={this.setDate}
-                  disabled={false}
-                />
-                <View style={Styles.dot} />
-              </View>
+        <View style={Styles.inputBox}>
+          <Icon type="AntDesign" name="calendar" style={Styles.iconBox} />
+          <View style={Styles.inputAreaBox}>
+            <Text style={Styles.titleBox}>Check-in</Text>
+            <View style={{flexDirection: 'row'}}>
+              <DatePicker
+                // defaultDate={new Date(2019, 10, 4)}
+                minimumDate={new Date()}
+                maximumDate={new Date(2019, 12, 29)}
+                locale={'en'}
+                timeZoneOffsetInMinutes={undefined}
+                modalTransparent={false}
+                animationType={'fade'}
+                androidMode={'calendar'}
+                supportedOrientations={'Landscape'}
+                placeHolderText="Select date"
+                textStyle={{
+                  fontSize: 16,
+                  fontWeight: 'bold',
+                  marginLeft: -10,
+                  marginTop: -10,
+                }}
+                placeHolderTextStyle={{
+                  fontSize: 16,
+                  fontWeight: 'bold',
+                  marginLeft: -10,
+                  marginTop: -10,
+                }}
+                // onDateChange={this.setDate}
+                disabled={false}
+              />
+              <View style={Styles.dot} />
             </View>
           </View>
-        </TouchableOpacity>
+        </View>
 
         <TouchableOpacity
           style={Styles.inputBoxItem}
