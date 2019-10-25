@@ -16,10 +16,10 @@ const Rooms = props => {
           <Tab
             heading="Kamar"
             tabStyle={{backgroundColor: '#fff'}}
-            textStyle={{color: '#000'}}
+            textStyle={{color: '#d0d4d7'}}
             activeTabStyle={{backgroundColor: '#fff'}}
             activeTextStyle={{
-              color: '#d0d4d7',
+              color: '#000',
               fontWeight: 'normal',
               borderColor: 'red',
             }}>
@@ -28,10 +28,10 @@ const Rooms = props => {
           <Tab
             heading="Tiket Pesawat"
             tabStyle={{backgroundColor: '#fff'}}
-            textStyle={{color: '#000'}}
+            textStyle={{color: '#d0d4d7'}}
             activeTabStyle={{backgroundColor: '#fff'}}
             activeTextStyle={{
-              color: '#d0d4d7',
+              color: '#000',
               fontWeight: 'normal',
             }}>
             <ScreenPlane navigate={props.navigation.navigate} />

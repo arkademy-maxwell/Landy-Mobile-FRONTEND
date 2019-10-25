@@ -22,7 +22,7 @@ const LoginMenu = props => (
     <View style={Styles.viewTextWelcome}>
       <Text style={Styles.wrappTextWelcome}>
         <View style={Styles.roundedActive} />
-        <Text style={Styles.welcome}> Selamat Datang, </Text>
+        <Text style={Styles.welcome}>Selamat Datang, </Text>
         <Text style={Styles.nameUser}>{props.name}</Text>
       </Text>
     </View>
