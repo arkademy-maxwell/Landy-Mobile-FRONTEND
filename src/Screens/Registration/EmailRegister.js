@@ -19,10 +19,6 @@ import Header from '../../Components/Header/parent/Header';
 const EmailRegister = props => {
   const [email, setEmail] = useState('');
 
-  // useEffect(() => {
-  //   console.log({ email });
-  // }, [])
-
   return (
     <Container>
       <Header

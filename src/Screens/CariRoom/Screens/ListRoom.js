@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Container,
   Content,
@@ -17,7 +17,26 @@ import {TouchableOpacity, Image} from 'react-native';
 import Header from '../Components/Header';
 import Style from './ListRoom.style';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+// Redux
+import {useDispatch, useSelector} from 'react-redux';
+import {getRoom} from '../../../../public/Redux/Actions/Room';
+
 const ListRoom = props => {
+  const [Data, setData] = useState([]);
+
+  const Room = useSelector(state => state.Room.RoomList);
+  const dispatch = useDispatch();
+
+  async function getData() {
+    const output = await dispatch(getRoom());
+    setData(output.value.data.data);
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Container style={{backgroundColor: '#ecf0f1'}}>
       <Header />
@@ -350,4 +369,5 @@ const ListRoom = props => {
     </Container>
   );
 };
+
 export default ListRoom;

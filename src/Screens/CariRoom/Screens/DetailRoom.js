@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Container,
   Content,
@@ -19,19 +19,42 @@ import {
   CardItem,
   CheckBox,
 } from 'native-base';
-import {
-  ScrollView,
-  ImageBackground,
-  Image,
-  TouchableOpacity,
-  Linking,
-} from 'react-native';
+import {ScrollView, ImageBackground, Image, ToastAndroid} from 'react-native';
 import Header from '../Components/Header';
 import Styles from './DetailRoom.style';
 import LinearGradient from 'react-native-linear-gradient';
 // import {prependOnceListener} from 'cluster';
 // import Icon from 'react-native-vector-icons/Ionicons';
+
+import Axios from 'axios';
+import {API_BASEURL} from 'react-native-dotenv';
+
 const DetailRoom = props => {
+  const [Room, setRoom] = useState('');
+  const [Address, setAddress] = useState('');
+  const [Description, setDescription] = useState('');
+  const [Price, setPrice] = useState('');
+  const [RoomID, setRoomID] = useState('');
+
+  const getRoom = () => {
+    setRoomID(props.navigation.getParam('id'));
+    Axios.get(`${API_BASEURL}/api/v1/rooms/${RoomID}`)
+      .then(result => {
+        setRoom(result.data.data[0].room);
+        setAddress(result.data.data[0].address);
+        setDescription(result.data.data[0].description);
+        setPrice(result.data.data[0].price);
+      })
+      .catch(error => {
+        console.log(error);
+        ToastAndroid.show('Cannot Get Data', ToastAndroid.LONG);
+      });
+  };
+
+  useEffect(() => {
+    getRoom();
+  }, [Room, Address, Description, Price]);
+
   return (
     <Container style={Styles.body}>
       <Content>
@@ -39,13 +62,11 @@ const DetailRoom = props => {
           <View style={Styles.linearGradient}>
             <Grid>
               <Col>
-                <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                  <Icon
-                    type="Ionicons"
-                    name="md-arrow-back"
-                    style={{color: '#fff'}}
-                  />
-                </TouchableOpacity>
+                <Icon
+                  type="Ionicons"
+                  name="md-arrow-back"
+                  style={{color: '#fff'}}
+                />
               </Col>
               <Col>
                 <Icon
@@ -118,12 +139,8 @@ const DetailRoom = props => {
                 <Col size={6}>
                   <View style={{marginLeft: 20}}>
                     <Text style={Styles.labelLandyRooms}>Landy Rooms</Text>
-                    <Text style={Styles.titleRoom}>
-                      Landy Fatmawati Abdul Majid Raya 12 Jakarta
-                    </Text>
-                    <Text style={Styles.subTitleRoom}>
-                      Jl. Abdul Majid Raya No. 12
-                    </Text>
+                    <Text style={Styles.titleRoom}>{Room}</Text>
+                    <Text style={Styles.subTitleRoom}>{Address}</Text>
                   </View>
                 </Col>
               </Grid>
@@ -179,7 +196,7 @@ const DetailRoom = props => {
                         style={Styles.iconColor}
                       />
                       <Text style={Styles.titleIconFacility}>
-                        tempat Tidur Bersih
+                        Tempat Tidur Bersih
                       </Text>
                     </View>
                   </Col>
@@ -206,13 +223,11 @@ const DetailRoom = props => {
 
           <Card style={Styles.cardTwo}>
             <Grid style={{padding: 15}}>
+              <Text style={{fontSize: 15, color: '#7f8c8d', marginBottom: 5}}>
+                INFORMASI PENTING
+              </Text>
               <Row>
-                <Text style={{fontSize: 15, color: '#7f8c8d'}}>
-                  INFORMASI PENTING
-                </Text>
-              </Row>
-              <Row>
-                <Col size={1}>
+                {/* <Col size={1}>
                   <View
                     style={{
                       width: 5,
@@ -220,29 +235,9 @@ const DetailRoom = props => {
                       borderRadius: 50,
                       backgroundColor: '#00aeef',
                     }}></View>
-                </Col>
+                </Col> */}
                 <Col size={15}>
-                  <Text style={{fontSize: 12}}>
-                    Jam check-in mulai pukul 14.00, dan check-out sebelum pukul
-                    12.00
-                  </Text>
-                </Col>
-              </Row>
-              <Row>
-                <Col size={1}>
-                  <View
-                    style={{
-                      width: 5,
-                      height: 5,
-                      borderRadius: 50,
-                      backgroundColor: '#00aeef',
-                    }}></View>
-                </Col>
-                <Col size={15}>
-                  <Text style={{fontSize: 12}}>
-                    Pihak hotet mungkin akan meminta deposit untuk menutupi
-                    pembayaran tak terduga
-                  </Text>
+                  <Text style={{fontSize: 12}}>{Description}</Text>
                 </Col>
               </Row>
             </Grid>
@@ -357,15 +352,15 @@ const DetailRoom = props => {
                   </Col>
                   <Col style={{alignItems: 'center'}}>
                     <Text style={{fontSize: 13}}>Harga Per Malam</Text>
-                    <Text
+                    {/* <Text
                       style={{
                         fontSize: 13,
                         textDecorationLine: 'line-through',
                       }}>
                       Rp476.480
-                    </Text>
+                    </Text> */}
                     <Text style={{fontSize: 17, color: '#6e9d3c'}}>
-                      Rp.376.480
+                      {Price}
                     </Text>
                     <Button
                       warning
@@ -378,101 +373,6 @@ const DetailRoom = props => {
                         backgroundColor: '#ffcb00',
                       }}
                       onPress={() => props.navigation.navigate('BuatPesanan')}>
-                      <Text style={{color: '#000'}}>Pilih</Text>
-                    </Button>
-                  </Col>
-                </Row>
-              </Grid>
-            </CardItem>
-            <CardItem style={{borderTopWidth: 1, borderColor: '#ecf0f1'}}>
-              <Grid>
-                <Row>
-                  <Text
-                    style={{
-                      fontSize: 13,
-                      color: '#00aeef',
-                      textDecorationLine: 'underline',
-                    }}>
-                    Landy Rooms Superior Twin
-                  </Text>
-                </Row>
-                <Row>
-                  <Col>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
-                      <Col size={1}>
-                        <Icon
-                          type="MaterialIcons"
-                          name="free-breakfast"
-                          style={{fontSize: 15, color: '#6e9d3c'}}
-                        />
-                      </Col>
-                      <Col size={6}>
-                        <Text style={{fontSize: 13, color: '#6e9d3c'}}>
-                          Sarapan Gratis
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
-                      <Col size={1}>
-                        <Icon
-                          type="Zocial"
-                          name="guest"
-                          style={{fontSize: 15}}
-                        />
-                      </Col>
-                      <Col size={6}>
-                        <Text style={{fontSize: 13}}>2 Tamu / kamar</Text>
-                      </Col>
-                    </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
-                      <Col size={1}>
-                        <Icon
-                          type="Ionicons"
-                          name="ios-bed"
-                          style={{fontSize: 15}}
-                        />
-                      </Col>
-                      <Col size={6}>
-                        <Text style={{fontSize: 13}}>Twin</Text>
-                      </Col>
-                    </Row>
-                    <Row style={{alignItems: 'center', marginTop: 15}}>
-                      <Col size={1}>
-                        <Icon
-                          type="Entypo"
-                          name="lock"
-                          style={{fontSize: 15}}
-                        />
-                      </Col>
-                      <Col size={6}>
-                        <Text style={{fontSize: 13}}>
-                          Tidak dapat dibatalkan
-                        </Text>
-                      </Col>
-                    </Row>
-                  </Col>
-                  <Col style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: 13}}>Harga Per Malam</Text>
-                    <Text
-                      style={{
-                        fontSize: 13,
-                        textDecorationLine: 'line-through',
-                      }}>
-                      Rp476.480
-                    </Text>
-                    <Text style={{fontSize: 17, color: '#6e9d3c'}}>
-                      Rp.376.480
-                    </Text>
-                    <Button
-                      warning
-                      style={{
-                        borderRadius: 20,
-                        elevation: 0,
-                        marginTop: 10,
-                        paddingLeft: 10,
-                        paddingRight: 10,
-                        backgroundColor: '#ffcb00',
-                      }}>
                       <Text style={{color: '#000'}}>Pilih</Text>
                     </Button>
                   </Col>
