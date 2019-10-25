@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Icon, Text} from 'native-base';
+import {View, Text} from 'native-base';
 import styles from './Header.style';
 const Header = props => {
   return (

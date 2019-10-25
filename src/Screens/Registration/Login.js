@@ -66,7 +66,7 @@ const Login = props => {
       <Content>
         <View style={Styles.viewLogo}>
           <ImageBackground
-            source={require('../../../public/assets/Logo/Logo.png')}
+            source={require('../../../public/assets/Logo/Logo.jpeg')}
             style={Styles.Logo}
           />
         </View>

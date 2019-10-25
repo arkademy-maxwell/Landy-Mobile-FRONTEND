@@ -11,7 +11,6 @@ import {
   Right,
   Button,
   View,
-  Card,
   Tab,
   Tabs,
   ScrollableTab,
@@ -69,52 +68,7 @@ const ListPenerbangan = props => {
               <PalingAkhir navigate={props.navigation.navigate} />
             </Tab>
           </Tabs>
-          {/* <Tabs
-            style={{backgroundColor: '#0185EF'}}
-            tabBarUnderlineStyle={{
-              borderBottomWidth: 2,
-              borderColor: '#1bb6f1',
-            }}
-            tabContainerStyle={{elevation: 0}}>
-            <Tab
-              heading="Termurah"
-              tabStyle={{backgroundColor: '#0185EF'}}
-              textStyle={{color: '#000'}}
-              activeTabStyle={{backgroundColor: '#0185EF'}}
-              activeTextStyle={{
-                color: '#d0d4d7',
-                fontWeight: 'normal',
-                borderColor: 'red',
-              }}>
-              <Termurah />
-            </Tab>
-            <Tab
-              heading="Paling Awal"
-              tabStyle={{backgroundColor: '#0185EF'}}
-              textStyle={{color: '#000'}}
-              activeTabStyle={{backgroundColor: '#0185EF'}}
-              activeTextStyle={{
-                color: '#d0d4d7',
-                fontWeight: 'normal',
-                borderColor: 'red',
-              }}>
-              <PalingAwal />
-            </Tab>
-            <Tab
-              heading="Paling Akhir"
-              tabStyle={{backgroundColor: '#0185EF'}}
-              textStyle={{color: '#000'}}
-              activeTabStyle={{backgroundColor: '#0185EF'}}
-              activeTextStyle={{
-                color: '#d0d4d7',
-                fontWeight: 'normal',
-                borderColor: 'red',
-              }}>
-              <PalingAkhir />
-            </Tab>
-          </Tabs> */}
         </View>
-        {/* <DataPalingAkhir navigation={props.navigation.navigate} /> */}
       </Content>
     </Container>
   );
