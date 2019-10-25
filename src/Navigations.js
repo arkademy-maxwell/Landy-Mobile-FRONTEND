@@ -107,7 +107,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'OpenScreen',
   },
 );
 
