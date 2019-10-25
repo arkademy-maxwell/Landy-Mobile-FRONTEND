@@ -73,7 +73,7 @@ const EmailRegister = props => {
             <Col size={3}>
               <TouchableOpacity
                 onPress={() => props.navigation.navigate('Login')}>
-                <Text style={{color: '#5ecbf5', fontSize: 12}}>Login</Text>
+                <Text style={{color: '#5ecbf5', fontSize: 12}}> Login</Text>
               </TouchableOpacity>
             </Col>
           </Grid>

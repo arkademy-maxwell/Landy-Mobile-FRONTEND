@@ -181,7 +181,7 @@ const DaftarBiodata = props => {
               <Col size={3}>
                 <TouchableOpacity
                   onPress={() => props.navigation.navigate('Login')}>
-                  <Text style={{color: '#5ecbf5', fontSize: 12}}>Masuk</Text>
+                  <Text style={{color: '#5ecbf5', fontSize: 12}}> Masuk</Text>
                 </TouchableOpacity>
               </Col>
             </Grid>

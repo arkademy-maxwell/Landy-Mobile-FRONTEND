@@ -119,6 +119,7 @@ const Login = props => {
                         props.navigation.navigate('EmailRegister')
                       }>
                       <Text style={{color: '#5ecbf5', fontSize: 12}}>
+                        {' '}
                         DAFTAR
                       </Text>
                     </TouchableOpacity>
