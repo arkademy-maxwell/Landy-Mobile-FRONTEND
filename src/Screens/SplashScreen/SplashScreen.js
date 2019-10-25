@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Carousel from 'pinar';
 import Dots from 'react-native-dots-pagination';
-import {ImageBackground} from 'react-native';
-import {View, Text, Button} from 'native-base';
-import {styles} from './SplashScreen.style';
+import { ImageBackground, AsyncStorage } from 'react-native';
+import { View, Text, Button } from 'native-base';
+import { styles } from './SplashScreen.style';
 
 const SplashScreen = props => {
   const [dotsActive, setDotsActive] = useState(0);
@@ -44,6 +44,7 @@ const SplashScreen = props => {
       }
 
       if (dotsActive === 3) {
+        AsyncStorage.setItem('isConfigured', 'true')
         return props.navigation.navigate('Home');
       }
     };
@@ -104,13 +105,13 @@ const SplashScreen = props => {
   let carousel;
   return (
     <View style={styles.content}>
-      <View style={{flex: 5}}>
+      <View style={{ flex: 5 }}>
         <Carousel
           ref={Carousel => (carousel = Carousel)}
           showsControls={false}
           style={styles.carousel}
           renderDots={renderDots}
-          onIndexChanged={({index}) => hasIndexChanged(index)}
+          onIndexChanged={({ index }) => hasIndexChanged(index)}
           scrollEventThrottle={16}>
           {DataSplash.map((item, idx) => {
             return (

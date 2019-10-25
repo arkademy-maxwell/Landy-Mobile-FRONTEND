@@ -56,7 +56,7 @@ const EmailAktivasi = props => {
                 }}>
                 <Text
                   style={{color: '#989794'}}
-                  onPress={() => props.navigation.navigate('DaftarBiodata')}>
+                  onPress={() => props.navigation.navigate('Login')}>
                   Aktifkan
                 </Text>
               </Button>

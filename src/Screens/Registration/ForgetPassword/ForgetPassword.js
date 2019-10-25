@@ -9,12 +9,8 @@ import {
   Item,
   Input,
   Label,
-  Grid,
-  Col,
-  Row,
-  Image,
 } from 'native-base';
-import {TouchableOpacity, ImageBackground} from 'react-native';
+import {ImageBackground} from 'react-native';
 import Header from '../../../Components/Header/parent/Header';
 
 const ForgetPassword = props => {

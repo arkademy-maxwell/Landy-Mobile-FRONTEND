@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     height: 50,
     width: '100%',
   },
+  // Bottom
+  logoSocmed: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
 });
 
 export default styles;

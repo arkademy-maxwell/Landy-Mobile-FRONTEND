@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Content, View, Tab, Tabs} from 'native-base';
 
-// component
 import HeaderBanner from './Component/HeaderBanner';
 import ScreenRoom from './Screens/Rooms';
 import ScreenPlane from './Screens/Plane';
@@ -35,7 +34,7 @@ const Rooms = props => {
               color: '#d0d4d7',
               fontWeight: 'normal',
             }}>
-            <ScreenPlane />
+            <ScreenPlane navigate={props.navigation.navigate} />
           </Tab>
         </Tabs>
       </View>
