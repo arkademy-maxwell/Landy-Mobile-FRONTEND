@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import HomeNav from './Screens/Home/HomeNav';
 
 // ANCHOR Import Pesanan : Family
@@ -31,6 +31,7 @@ import DetailRoom from './Screens/CariRoom/Screens/DetailRoom';
 import BuatPesanan from './Screens/Pesanan/Screens/BuatPesanan';
 import KonfirmasiPesanan from './Screens/Pesanan/Screens/KonfirmasiPesanan/KonfirmasiPesanan';
 import MetodePembayaran from './Screens/Pesanan/Screens/MetodePembayaran/MetodePembayarn';
+import Durasi from './Screens/Home/Component/Durasi';
 
 const MainNavigator = createStackNavigator(
   {
@@ -56,15 +57,16 @@ const MainNavigator = createStackNavigator(
     BuatPesanan,
     KonfirmasiPesanan,
     MetodePembayaran,
+    Durasi,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
         navigationOptions: {
           tabBarLabel: 'Cari',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
               <Icon
-                style={[{ color: tintColor }]}
+                style={[{color: tintColor}]}
                 size={25}
                 name={'ios-search'}
               />
@@ -72,35 +74,35 @@ const MainNavigator = createStackNavigator(
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Pesanan: {
         screen: Pesanan,
         navigationOptions: {
           tabBarLabel: 'Pesanan',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-paper'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-paper'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Menu: {
         screen: Menu,
         navigationOptions: {
           tabBarLabel: 'Menu',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-menu'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-menu'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
     }),

@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Content, View, Tab, Tabs} from 'native-base';
 
-// component
 import HeaderBanner from './Component/HeaderBanner';
 import ScreenRoom from './Screens/Rooms';
 import ScreenPlane from './Screens/Plane';
@@ -17,10 +16,10 @@ const Rooms = props => {
           <Tab
             heading="Kamar"
             tabStyle={{backgroundColor: '#fff'}}
-            textStyle={{color: '#000'}}
+            textStyle={{color: '#d0d4d7'}}
             activeTabStyle={{backgroundColor: '#fff'}}
             activeTextStyle={{
-              color: '#d0d4d7',
+              color: '#000',
               fontWeight: 'normal',
               borderColor: 'red',
             }}>
@@ -29,13 +28,13 @@ const Rooms = props => {
           <Tab
             heading="Tiket Pesawat"
             tabStyle={{backgroundColor: '#fff'}}
-            textStyle={{color: '#000'}}
+            textStyle={{color: '#d0d4d7'}}
             activeTabStyle={{backgroundColor: '#fff'}}
             activeTextStyle={{
-              color: '#d0d4d7',
+              color: '#000',
               fontWeight: 'normal',
             }}>
-            <ScreenPlane />
+            <ScreenPlane navigate={props.navigation.navigate} />
           </Tab>
         </Tabs>
       </View>

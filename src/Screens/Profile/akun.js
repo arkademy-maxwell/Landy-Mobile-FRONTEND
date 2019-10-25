@@ -24,19 +24,6 @@ const Akun = props => {
       <Header menu="Akun" icon="arrow-back" />
       <Content>
         <View style={{marginLeft: 20, marginRight: 35, marginBottom: 20}}>
-          <View style={{position: 'relative'}}>
-            <View style={Styles.profile}>
-              <Image
-                source={require('../../../public/profil/user.jpg')}
-                style={Styles.imageProfile}
-              />
-            </View>
-            <TouchableOpacity
-              //   onPress={() => props.navigation.navigate('Login')}
-              style={Styles.editProfile}>
-              <Icon type="AntDesign" name="edit" style={{color: '#0184ef'}} />
-            </TouchableOpacity>
-          </View>
           <Form>
             <Item picker style={{marginLeft: 10}}>
               <Picker

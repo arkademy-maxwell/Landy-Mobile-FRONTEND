@@ -24,33 +24,27 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 0,
   },
-  bantuan: {
-    borderBottomWidth: 1,
+  listView: {
+    borderBottomWidth: 0.5,
     borderColor: '#e5e5e5',
     flexDirection: 'row',
-    marginTop: 20,
+    paddingVertical: 15,
+    alignItems: 'center',
   },
-  bantuanLogo: {
-    flex: 1,
-    marginLeft: 20,
-    marginBottom: 15,
-  },
-  bantuanBantuan: {
-    flex: 5,
-    marginTop: 5,
+  listLogo: {
+    paddingHorizontal: 20,
   },
   layananPelanggan: {
+    marginLeft: 20,
     marginBottom: 15,
     color: '#c5c5c5',
   },
   wrapLayananPelanggan: {
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 20,
+    marginTop: 15,
   },
   layananContent: {
     flexDirection: 'row',
-    marginBottom: 30,
+    paddingVertical: 15,
   },
   mainText: {
     marginBottom: 5,
@@ -59,14 +53,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#525252',
   },
-  tentang: {
-    margin: 20,
-  },
   border: {
     borderColor: '#e5e5e5',
+    borderTopWidth: 0.5,
+    paddingVertical: 10,
   },
   icon: {
     color: '#99a3a4',
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   viewTextWelcome: {
     backgroundColor: '#efeff5',

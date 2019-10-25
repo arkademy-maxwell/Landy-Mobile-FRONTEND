@@ -75,78 +75,91 @@ const BuatPesanan = props => {
               <Input />
             </Item>
           </Form>
-
-          <Card style={{padding: 10, elevation: 0, marginTop: 30}}>
-            <Grid>
-              <Row>
-                <Col size={2}>
-                  <Image
-                    source={require('../../../Assets/Images/promo.png')}
-                    style={{width: 75, height: 75, borderRadius: 5}}
-                  />
-                </Col>
-                <Col size={6}>
-                  <View style={{marginLeft: 20}}>
-                    <Text style={{fontSize: 13}}>Landy Rooms</Text>
-                    <Text style={{fontSize: 13}}>
-                      Landy Fatmawati Abdul Majid Raya 12 Jakarta
-                    </Text>
-                    <Text style={{fontSize: 13}}>
-                      Jl. Abdul Majid Raya No. 12
-                    </Text>
-                  </View>
-                </Col>
-              </Row>
-              <Row>
-                <Card
-                  style={{
-                    elevation: 0,
-                    padding: 5,
-                    width: '100%',
-                    marginTop: 10,
-                  }}>
-                  <Grid>
-                    <Col size={5}>
-                      <Text style={{fontSize: 12}}>
-                        Landy Rooms Superior Twin 10
+        </View>
+        <View style={{backgroundColor: '#ecf0f1'}}>
+          <View style={{marginLeft: 15, marginRight: 15, marginBottom: 20}}>
+            <Text style={{color: '#7f8c8d', lineHeight: 35, fontSize: 13}}>
+              Kamar
+            </Text>
+            <Card
+              style={{
+                padding: 10,
+                elevation: 0,
+                borderColor: '#ecf0f1',
+              }}>
+              <Grid>
+                <Row>
+                  <Col size={2}>
+                    <Image
+                      source={require('../../../Assets/Images/promo.png')}
+                      style={{width: 75, height: 75, borderRadius: 5}}
+                    />
+                  </Col>
+                  <Col size={6}>
+                    <View style={{marginLeft: 20}}>
+                      <Text style={{fontSize: 13, }}>Landy Rooms</Text>
+                      <Text style={{fontSize: 13}}>
+                        Landy Fatmawati Abdul Majid Raya 12 Jakarta
                       </Text>
-                      <Text style={{fontSize: 12}}>Max (x1)</Text>
-                    </Col>
-                    <Col size={2}>
-                      <Text style={{fontSize: 12}}>Rp.150000</Text>
-                    </Col>
-                  </Grid>
-                </Card>
-              </Row>
-              <Row>
-                <Text>Data Tamu</Text>
-              </Row>
-              <Row>
-                <Card
-                  style={{
-                    elevation: 0,
-                    padding: 5,
-                    width: '100%',
-                    marginTop: 10,
-                    borderColor: '#00aeef',
-                    backgroundColor: '#d0f3ff',
-                  }}>
-                  <Grid>
-                    <Col size={5}>
-                      <Text>Isi data tamu</Text>
-                    </Col>
-                    <Col size={2}>
-                      <Icon
-                        type="Ionicons"
-                        name="md-arrow-forward"
-                        style={{color: '#00aeef', alignSelf: 'flex-end'}}
-                      />
-                    </Col>
-                  </Grid>
-                </Card>
-              </Row>
-            </Grid>
-          </Card>
+                      <Text style={{fontSize: 13}}>
+                        Jl. Abdul Majid Raya No. 12
+                      </Text>
+                    </View>
+                  </Col>
+                </Row>
+                <Row>
+                  <Card
+                    style={{
+                      elevation: 0,
+                      padding: 5,
+                      width: '100%',
+                      marginTop: 10,
+                    }}>
+                    <Grid>
+                      <Col size={5}>
+                        <Text style={{fontSize: 12}}>
+                          Landy Rooms Superior Twin 10
+                        </Text>
+                        <Text style={{fontSize: 12}}>Max (x1)</Text>
+                      </Col>
+                      <Col size={2}>
+                        <Text style={{fontSize: 12}}>Rp.150000</Text>
+                      </Col>
+                    </Grid>
+                  </Card>
+                </Row>
+                <Row>
+                  <Text>Data Tamu</Text>
+                </Row>
+                <Row>
+                  <Card
+                    style={{
+                      elevation: 0,
+                      padding: 5,
+                      width: '100%',
+                      marginTop: 10,
+                      borderColor: '#00aeef',
+                      backgroundColor: '#d0f3ff',
+                    }}>
+                    <Grid>
+                      <Row style={{alignItems: 'center'}}>
+                        <Col size={5}>
+                          <Text>Isi data tamu</Text>
+                        </Col>
+                        <Col size={2}>
+                          <Icon
+                            type="Ionicons"
+                            name="md-arrow-forward"
+                            style={{color: '#00aeef', alignSelf: 'flex-end'}}
+                          />
+                        </Col>
+                      </Row>
+                    </Grid>
+                  </Card>
+                </Row>
+              </Grid>
+            </Card>
+          </View>
         </View>
         <View
           style={{
