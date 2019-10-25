@@ -77,7 +77,11 @@ const Ticket = props => {
           </View>
         </TouchableOpacity>
 
-        <Button full warning style={Styles.buttonCariKamar}>
+        <Button
+          full
+          warning
+          style={Styles.buttonCariKamar}
+          onPress={() => props.navigate('ListPenerbangan')}>
           <Text style={Styles.textCariKamar}>Cari Penerbangan</Text>
         </Button>
 

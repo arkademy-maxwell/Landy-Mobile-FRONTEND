@@ -14,7 +14,7 @@ const Headers = props => {
   return (
     <Header style={Style.Header}>
       <Left>
-        <Button transparent>
+        <Button transparent onPress={() => props.navigation.goBack()}>
           <Icon name="arrow-back" />
         </Button>
       </Left>

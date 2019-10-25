@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "crypto": "^1.0.1",
     "native-base": "^2.13.8",
     "pinar": "^0.11.0",
     "react": "16.9.0",
