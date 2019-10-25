@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Content, View, Tab, Tabs} from 'native-base';
 
-// component
 import HeaderBanner from './Component/HeaderBanner';
 import ScreenRoom from './Screens/Rooms';
 import ScreenPlane from './Screens/Plane';

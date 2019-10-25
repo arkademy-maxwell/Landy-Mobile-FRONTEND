@@ -56,7 +56,6 @@ const MainNavigator = createStackNavigator(
     BuatPesanan,
     KonfirmasiPesanan,
     MetodePembayaran,
-    HomeNav,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
