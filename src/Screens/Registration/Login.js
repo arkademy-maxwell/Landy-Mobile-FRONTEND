@@ -27,8 +27,6 @@ import Styles from './Login.style';
 import {useDispatch} from 'react-redux';
 import {getAuth} from '../../../public/Redux/Actions/Auth';
 import {AsyncStorage, ToastAndroid} from 'react-native';
-import {API_BASEURL} from 'react-native-dotenv';
-import Axios from 'axios';
 
 const Login = props => {
   const dispatch = useDispatch();
@@ -41,11 +39,11 @@ const Login = props => {
     const result = await getAuth(data);
     if (result.payload.success === 200) {
       dispatch(result);
-      AsyncStorage.setItem('auth-token', result.payload.token);
+      AsyncStorage.setItem('user-credential', JSON.stringify(result.payload));
       ToastAndroid.show('Login Success!', ToastAndroid.SHORT);
-      props.navigation.navigate('Menu');
+      return props.navigation.navigate('Menu');
     } else {
-      ToastAndroid.show(
+      return ToastAndroid.show(
         'Login Failed! Username/Password is invalid!',
         ToastAndroid.LONG,
       );
@@ -77,7 +75,12 @@ const Login = props => {
             <View style={{marginLeft: 20, marginRight: 20}}>
               <Item floatingLabel>
                 <Label>Email</Label>
-                <Input onChangeText={text => setEmail(text)} value={email} />
+                <Input
+                  onChangeText={text => setEmail(text)}
+                  value={email}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                />
               </Item>
               <PasswordInputText
                 onChangeText={text => setPassword(text)}
