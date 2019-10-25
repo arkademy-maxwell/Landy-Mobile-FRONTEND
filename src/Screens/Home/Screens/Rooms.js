@@ -57,7 +57,11 @@ const Rooms = props => {
           </View>
         </TouchableOpacity>
 
-        <Button full warning style={Styles.buttonCariKamar} onPress={()=> props.navigate('ListRoom')}>
+        <Button
+          full
+          warning
+          style={Styles.buttonCariKamar}
+          onPress={() => props.navigate('ListRoom')}>
           <Text style={Styles.textCariKamar}>Cari Kamar Landy Rooms</Text>
         </Button>
 

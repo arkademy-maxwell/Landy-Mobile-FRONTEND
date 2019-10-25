@@ -20,7 +20,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const ListRoom = props => {
   return (
     <Container style={{backgroundColor: '#ecf0f1'}}>
-      <Header />
+      <Header {...props} />
       <View>
         <Card style={Style.marginBottom}>
           <ListItem thumbnail>

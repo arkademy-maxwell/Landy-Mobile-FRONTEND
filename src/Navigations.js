@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import HomeNav from './Screens/Home/HomeNav';
 
 // ANCHOR Import Pesanan : Family
@@ -28,6 +28,13 @@ import ForgetPassword from './Screens/Registration/ForgetPassword/ForgetPassword
 import resetPassword from './Screens/Registration/ForgetPassword/resetPassword';
 import ListRoom from './Screens/CariRoom/Screens/ListRoom';
 import DetailRoom from './Screens/CariRoom/Screens/DetailRoom';
+import ListPenerbangan from './Screens/CariPenerbangan/screens/ListPenerbangan';
+import DataTermurah from './Screens/CariPenerbangan/components/DataTermurah';
+import DataPalingAkhir from './Screens/CariPenerbangan/components/DataPalingAkhir';
+import DataPalingAwal from './Screens/CariPenerbangan/components/DataPalingAwal';
+// import PalingAwal from './Screens/CariPenerbangan/screens/PalingAwal';
+// import PalingAkhir from './Screens/CariPenerbangan/screens/PalingAkhir';
+// import DatePicker from './Screens/Home/Component/DatePicker';
 
 const MainNavigator = createStackNavigator(
   {
@@ -50,15 +57,22 @@ const MainNavigator = createStackNavigator(
     ListRoom,
     DetailRoom,
     DetailPromo,
+    DataPalingAwal,
+    DataPalingAkhir,
+    DataTermurah,
+    // PalingAwal,
+    // PalingAkhir,
+    // DatePicker,
+    ListPenerbangan,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
         navigationOptions: {
           tabBarLabel: 'Cari',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
               <Icon
-                style={[{ color: tintColor }]}
+                style={[{color: tintColor}]}
                 size={25}
                 name={'ios-search'}
               />
@@ -66,35 +80,35 @@ const MainNavigator = createStackNavigator(
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Pesanan: {
         screen: Pesanan,
         navigationOptions: {
           tabBarLabel: 'Pesanan',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-paper'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-paper'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
       Menu: {
         screen: Menu,
         navigationOptions: {
           tabBarLabel: 'Menu',
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({tintColor}) => (
             <View>
-              <Icon style={[{ color: tintColor }]} size={25} name={'ios-menu'} />
+              <Icon style={[{color: tintColor}]} size={25} name={'ios-menu'} />
             </View>
           ),
           activeColor: '#00aeef',
           inactiveColor: '#b9b9b9',
-          barStyle: { backgroundColor: '#fff', elevation: 0 },
+          barStyle: {backgroundColor: '#fff', elevation: 0},
         },
       },
     }),
