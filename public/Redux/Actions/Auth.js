@@ -3,13 +3,9 @@ import {AsyncStorage} from 'react-native';
 import {API_BASEURL} from 'react-native-dotenv';
 
 export const getAuth = async data => {
-  try {
-    const result = await Axios.post(`${API_BASEURL}/api/v1/users/login`, data);
-    return {
-      type: 'GET_AUTHENTICATION',
-      payload: result.data,
-    };
-  } catch (err) {
-    console.log(err);
-  }
+  const result = await Axios.post(`${API_BASEURL}/api/v1/users/login`, data);
+  return {
+    type: 'GET_AUTHENTICATION',
+    payload: result.data,
+  };
 };
