@@ -19,10 +19,17 @@ import {
   CardItem,
   CheckBox,
 } from 'native-base';
-import {ScrollView, ImageBackground, Image} from 'react-native';
+import {
+  ScrollView,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 import Header from '../Components/Header';
 import Styles from './DetailRoom.style';
 import LinearGradient from 'react-native-linear-gradient';
+// import {prependOnceListener} from 'cluster';
 // import Icon from 'react-native-vector-icons/Ionicons';
 const DetailRoom = props => {
   return (
@@ -32,11 +39,13 @@ const DetailRoom = props => {
           <View style={Styles.linearGradient}>
             <Grid>
               <Col>
-                <Icon
-                  type="Ionicons"
-                  name="md-arrow-back"
-                  style={{color: '#fff'}}
-                />
+                <TouchableOpacity onPress={() => props.navigation.goBack()}>
+                  <Icon
+                    type="Ionicons"
+                    name="md-arrow-back"
+                    style={{color: '#fff'}}
+                  />
+                </TouchableOpacity>
               </Col>
               <Col>
                 <Icon
@@ -90,14 +99,21 @@ const DetailRoom = props => {
               <Grid style={{marginLeft: 10}}>
                 <Col size={2}>
                   <View style={Styles.map}></View>
-                  <Text
-                    style={{
-                      color: '#00aeef',
-                      fontSize: 13,
-                      textAlign: 'center',
-                    }}>
-                    Lihat Peta
-                  </Text>
+                  <TouchableOpacity
+                    onPress={() =>
+                      Linking.openURL(
+                        'https://www.google.com/maps/search/bundaran+hi/@-6.1939337,106.8199394,17z',
+                      )
+                    }>
+                    <Text
+                      style={{
+                        color: '#00aeef',
+                        fontSize: 13,
+                        textAlign: 'center',
+                      }}>
+                      Lihat Peta
+                    </Text>
+                  </TouchableOpacity>
                 </Col>
                 <Col size={6}>
                   <View style={{marginLeft: 20}}>
@@ -359,6 +375,7 @@ const DetailRoom = props => {
                         marginTop: 10,
                         paddingLeft: 10,
                         paddingRight: 10,
+                        backgroundColor: '#ffcb00',
                       }}
                       onPress={() => props.navigation.navigate('BuatPesanan')}>
                       <Text style={{color: '#000'}}>Pilih</Text>
@@ -454,6 +471,7 @@ const DetailRoom = props => {
                         marginTop: 10,
                         paddingLeft: 10,
                         paddingRight: 10,
+                        backgroundColor: '#ffcb00',
                       }}>
                       <Text style={{color: '#000'}}>Pilih</Text>
                     </Button>
@@ -464,6 +482,27 @@ const DetailRoom = props => {
           </Card>
         </View>
       </Content>
+      <View style={Styles.wrapChoose}>
+        <Grid style={{marginLeft: 20, marginRight: 20}}>
+          <Row style={{alignItems: 'center'}}>
+            <Col size={3} style={{alignItems: 'flex-start'}}>
+              <Text style={{fontSize: 12}}>Pesan kamar mulai dari</Text>
+              <Text style={{fontSize: 15, color: '#427f01'}}>Rp.150000</Text>
+              <Text style={{fontSize: 13, color: '#97a1a2'}}>
+                (Harga nett per malam)
+              </Text>
+            </Col>
+            <Col size={2}>
+              <Button
+                warning
+                style={Styles.buttonChoose}
+                onPress={() => props.navigation.navigate('KonfirmasiPesanan')}>
+                <Text style={{color: '#000'}}>Pilih Kamar</Text>
+              </Button>
+            </Col>
+          </Row>
+        </Grid>
+      </View>
     </Container>
   );
 };

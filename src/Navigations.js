@@ -32,6 +32,8 @@ import BuatPesanan from './Screens/Pesanan/Screens/BuatPesanan';
 import KonfirmasiPesanan from './Screens/Pesanan/Screens/KonfirmasiPesanan/KonfirmasiPesanan';
 import MetodePembayaran from './Screens/Pesanan/Screens/MetodePembayaran/MetodePembayarn';
 import Durasi from './Screens/Home/Component/Durasi';
+import Bayar from './Screens/Pesanan/Screens/Bayar/bayar';
+import DataTamu from './Screens/Pesanan/Screens/DataTamu';
 
 const MainNavigator = createStackNavigator(
   {
@@ -58,6 +60,8 @@ const MainNavigator = createStackNavigator(
     KonfirmasiPesanan,
     MetodePembayaran,
     Durasi,
+    Bayar,
+    DataTamu,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,

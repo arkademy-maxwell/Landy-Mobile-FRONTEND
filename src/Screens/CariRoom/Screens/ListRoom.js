@@ -13,7 +13,7 @@ import {
   View,
   Card,
 } from 'native-base';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import Header from '../Components/Header';
 import Style from './ListRoom.style';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,35 +21,18 @@ const ListRoom = props => {
   return (
     <Container style={{backgroundColor: '#ecf0f1'}}>
       <Header />
-      <View>
-        <Card style={Style.marginBottom}>
-          <ListItem thumbnail>
-            <Left>
-              <View>
-                <Thumbnail
-                  style={{margin: 20}}
-                  square
-                  source={require('../../../Assets/Images/ListRoom.jpg')}
-                />
-              </View>
-            </Left>
-            <Body style={Style.borderWith}>
-              <Text>
-                Ada{' '}
-                <Text style={{fontWeight: 'bold'}}>
-                  Jaminan Kenyamanan di setiap kamar Landy!
-                </Text>
-                <Text style={{color: '#74D3F6'}}>Lihat Selengkapnya</Text>
-              </Text>
-            </Body>
-            <Right />
-          </ListItem>
-        </Card>
-      </View>
       <Content>
         <View>
-          {/* <TouchableOpacity
-            onPress={() => props.navigation.navigate('DetailRoom')}> */}
+          <TouchableOpacity>
+            <View style={{backgroundColor: '#fff'}}>
+              <View style={{margin: 10}}>
+                <Image
+                  source={require('../../../../public/register/Capture.png')}
+                  style={{width: '98%'}}
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
           <Card style={Style.marginBottom}>
             <ListItem thumbnail>
               <Left>

@@ -152,6 +152,21 @@ const styles = StyleSheet.create({
     height: 'auto',
     borderColor: '#fff',
   },
+  wrapChoose: {
+    width: '100%',
+    height: 75,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderColor: '#e9e9e9',
+  },
+  buttonChoose: {
+    borderRadius: 20,
+    elevation: 0,
+    marginTop: 10,
+    paddingLeft: 10,
+    width: 120,
+    backgroundColor: '#ffcb00',
+  },
 });
 
 export default styles;

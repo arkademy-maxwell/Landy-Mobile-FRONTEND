@@ -18,47 +18,56 @@ import {
 } from 'native-base';
 import {TouchableOpacity, Image} from 'react-native';
 import Header from '../../../../Components/Header/parent/Header';
+import HeaderDotted from '../../Component/Header';
+import Styles from './MetodePembayaran.style';
 const MetodePembayaran = props => {
   return (
     <Container>
-      <Header menu="Metode Pembayaran" icon="arrow-back" />
-      <Header />
+      <Header menu="Metode Pembayaran" icon="arrow-back" {...props} />
+      <HeaderDotted />
       <Content style={{backgroundColor: '#ecf0f1'}}>
         <View>
-          <Card
+          <Text
             style={{
-              padding: 10,
-              elevation: 0,
-              marginTop: 30,
-              borderColor: 'white',
-              borderBottomColor: '#e9e9e9',
+              textAlign: 'center',
+              paddingTop: 5,
+              fontSize: 13,
+              paddingBottom: 5,
+              color: '#7f8c8d',
             }}>
+            Sisa waktu: 1 jam 23 menit 11 detik
+          </Text>
+          <Card style={Styles.cardParent}>
             <Grid>
               <Col size={5}>
                 <Row>
-                  <Text style={{fontSize: 15, color: '#7f8c8d'}}>
-                    JUMLAH YANG AKAN DIBAYAR
-                  </Text>
+                  <Text style={Styles.title}>JUMLAH YANG AKAN DIBAYAR</Text>
                 </Row>
                 <Row>
-                  <Text style={{color: '#427f01'}}>Rp.1500000</Text>
+                  <Text style={Styles.amount}>Rp.1500000</Text>
                 </Row>
               </Col>
               <Col size={2} style={{color: '#00aeef', alignItems: 'flex-end'}}>
                 {/* <TouchableOpacity onPress={()=> props.navigation.navigate('Konfir')}> */}
-                <Text style={{color: '#00aeef'}}>Pesanan</Text>
+                <Text style={{color: '#00aeef', fontSize: 14}}>Pesanan</Text>
                 {/* </TouchableOpacity> */}
               </Col>
             </Grid>
           </Card>
         </View>
         <View style={{marginLeft: 10, marginRight: 10, marginBottom: 20}}>
-          <Text style={{fontSize: 13, marginTop: 10, marginBottom: 10}}>
+          <Text
+            style={{
+              fontSize: 13,
+              marginTop: 10,
+              marginBottom: 10,
+              color: '#7f8c8d',
+            }}>
             Pillih Metode Pembayaran
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Bayar')}>
             <Card style={{padding: 15, borderRadius: 5}}>
-              <Text>ALfamart</Text>
+              <Text>Alfamart</Text>
             </Card>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -69,15 +78,7 @@ const MetodePembayaran = props => {
         </View>
 
         <View>
-          <Card
-            style={{
-              padding: 10,
-              elevation: 0,
-              marginTop: 120,
-              borderColor: 'white',
-              borderBottomColor: '#e9e9e9',
-              bottom: 0,
-            }}>
+          <Card style={Styles.wrapperChooseMethod}>
             <Grid>
               <Row>
                 <Text style={{fontSize: 15, color: '#7f8c8d'}}>
