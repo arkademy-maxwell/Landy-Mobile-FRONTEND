@@ -32,7 +32,6 @@ const ListPenerbangan = props => {
           <Tabs
             tabBarUnderlineStyle={{
               borderBottomWidth: 2,
-              borderColor: '#1bb6f1',
             }}
             tabContainerStyle={{elevation: 0}}
             scrollWithoutAnimation={true}>
@@ -44,7 +43,6 @@ const ListPenerbangan = props => {
               activeTextStyle={{
                 color: '#d0d4d7',
                 fontWeight: 'normal',
-                borderColor: 'red',
               }}>
               <Termurah navigate={props.navigation.navigate} />
             </Tab>
@@ -56,7 +54,6 @@ const ListPenerbangan = props => {
               activeTextStyle={{
                 color: '#d0d4d7',
                 fontWeight: 'normal',
-                borderColor: 'red',
               }}>
               <PalingAwal navigate={props.navigation.navigate} />
             </Tab>
@@ -68,7 +65,6 @@ const ListPenerbangan = props => {
               activeTextStyle={{
                 color: '#d0d4d7',
                 fontWeight: 'normal',
-                borderColor: 'red',
               }}>
               <PalingAkhir navigate={props.navigation.navigate} />
             </Tab>

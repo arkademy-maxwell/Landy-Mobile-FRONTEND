@@ -28,13 +28,12 @@ import ForgetPassword from './Screens/Registration/ForgetPassword/ForgetPassword
 import resetPassword from './Screens/Registration/ForgetPassword/resetPassword';
 import ListRoom from './Screens/CariRoom/Screens/ListRoom';
 import DetailRoom from './Screens/CariRoom/Screens/DetailRoom';
+import BuatPesanan from './Screens/Pesanan/Screens/BuatPesanan';
+import KonfirmasiPesanan from './Screens/Pesanan/Screens/KonfirmasiPesanan/KonfirmasiPesanan';
+import MetodePembayaran from './Screens/Pesanan/Screens/MetodePembayaran/MetodePembayarn';
+import Durasi from './Screens/Home/Component/Durasi';
 import ListPenerbangan from './Screens/CariPenerbangan/screens/ListPenerbangan';
-import DataTermurah from './Screens/CariPenerbangan/components/DataTermurah';
-import DataPalingAkhir from './Screens/CariPenerbangan/components/DataPalingAkhir';
-import DataPalingAwal from './Screens/CariPenerbangan/components/DataPalingAwal';
-// import PalingAwal from './Screens/CariPenerbangan/screens/PalingAwal';
-// import PalingAkhir from './Screens/CariPenerbangan/screens/PalingAkhir';
-// import DatePicker from './Screens/Home/Component/DatePicker';
+import DetailPenerbangan from './Screens/CariPenerbangan/screens/DetailPenerbangan';
 
 const MainNavigator = createStackNavigator(
   {
@@ -57,13 +56,12 @@ const MainNavigator = createStackNavigator(
     ListRoom,
     DetailRoom,
     DetailPromo,
-    DataPalingAwal,
-    DataPalingAkhir,
-    DataTermurah,
-    // PalingAwal,
-    // PalingAkhir,
-    // DatePicker,
+    BuatPesanan,
+    KonfirmasiPesanan,
+    MetodePembayaran,
+    Durasi,
     ListPenerbangan,
+    DetailPenerbangan,
     Index: createMaterialBottomTabNavigator({
       Home: {
         screen: HomeNav,
@@ -115,7 +113,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'OpenScreen',
   },
 );
 

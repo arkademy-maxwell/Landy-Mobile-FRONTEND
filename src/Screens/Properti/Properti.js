@@ -1,17 +1,20 @@
 import React from 'react';
-import { Container, Content, View, Text, Grid, Col, Row } from 'native-base';
-import { TouchableOpacity } from 'react-native';
+import {Container, Content, View, Text, Grid, Col, Row} from 'native-base';
+import {TouchableOpacity} from 'react-native';
 import Header from '../../Components/Header/parent/Header';
 import LinearGradient from 'react-native-linear-gradient';
-import promo from '../../Assets/Images/promo.png'
-import Styles from './Properti.style'
+import promo from '../../Assets/Images/promo.png';
+import Styles from './Properti.style';
 
 const Properti = props => {
   return (
     <Container>
       <Header icon="close" />
       <Content>
-        <LinearGradient colors={['#013c64', '#1a8cb5']}>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#013c64', '#008bbf']}>
           <Grid>
             <Col>
               <Text>Airy</Text>
@@ -19,10 +22,16 @@ const Properti = props => {
             <Col>
               <Grid>
                 <Row>
-                  <Text>08874573687</Text>
+                  <Col></Col>
+                  <Col>
+                    <Text>08874573687</Text>
+                  </Col>
                 </Row>
                 <Row>
-                  <Text>partner@landy.com</Text>
+                  <Col></Col>
+                  <Col>
+                    <Text>partner@landy.com</Text>
+                  </Col>
                 </Row>
               </Grid>
             </Col>

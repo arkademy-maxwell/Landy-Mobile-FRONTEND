@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ImageBackground, TouchableOpacity } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {ImageBackground, TouchableOpacity} from 'react-native';
 import {
   Container,
   Content,
@@ -24,32 +24,37 @@ import PasswordInputText from 'react-native-hide-show-password-input';
 import Styles from './Login.style';
 
 // Redux
-import { useDispatch } from 'react-redux'
-import { getAuth } from '../../../public/Redux/Actions/Auth'
-import { AsyncStorage, ToastAndroid } from 'react-native'
+import {useDispatch} from 'react-redux';
+import {getAuth} from '../../../public/Redux/Actions/Auth';
+import {AsyncStorage, ToastAndroid} from 'react-native';
+import {API_BASEURL} from 'react-native-dotenv';
+import Axios from 'axios';
 
 const Login = props => {
-  const dispatch = useDispatch()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const data = { email, password }
+  const data = {email, password};
 
   const submitLogin = async () => {
-    const result = await getAuth(data)
-    if (result !== 'undefined') {
-      dispatch(result)
-      AsyncStorage.setItem('auth-token', result.payload.token)
-      ToastAndroid.show('Login Success!', ToastAndroid.SHORT)
-      props.navigation.navigate('Menu')
+    const result = await getAuth(data);
+    if (result.payload.success === 200) {
+      dispatch(result);
+      AsyncStorage.setItem('auth-token', result.payload.token);
+      ToastAndroid.show('Login Success!', ToastAndroid.SHORT);
+      props.navigation.navigate('Menu');
     } else {
-      ToastAndroid.show('Alamat email atau password tidak valid!', ToastAndroid.SHORT)
+      ToastAndroid.show(
+        'Login Failed! Username/Password is invalid!',
+        ToastAndroid.LONG,
+      );
     }
-  }
+  };
 
   return (
     <Container>
-      <Header style={{ top: 0, backgroundColor: '#0091ef', elevation: 0 }}>
+      <Header style={{top: 0, backgroundColor: '#0091ef', elevation: 0}}>
         <Left>
           <Button transparent onPress={() => props.navigation.goBack()}>
             <Icon name="arrow-back" />
@@ -69,15 +74,11 @@ const Login = props => {
         </View>
         <View>
           <Form>
-            <View style={{ marginLeft: 20, marginRight: 20 }}>
+            <View style={{marginLeft: 20, marginRight: 20}}>
               <Item floatingLabel>
                 <Label>Email</Label>
-                <Input
-                  onChangeText={text => setEmail(text)}
-                  value={email} />
+                <Input onChangeText={text => setEmail(text)} value={email} />
               </Item>
-              {/* <Item floatingLabel style={{ marginTop: 10 }}>
-                                <Label>Password</Label> */}
               <PasswordInputText
                 onChangeText={text => setPassword(text)}
                 value={password}
@@ -89,18 +90,18 @@ const Login = props => {
                 full
                 style={Styles.buttonLogin}
                 onPress={() => submitLogin()}>
-                <Text style={{ color: '#989794' }}>Masuk</Text>
+                <Text style={{color: '#989794'}}>Masuk</Text>
               </Button>
               <Button
                 full
                 transparent
-                style={{ marginTop: 20, marginBottom: 30 }}
+                style={{marginTop: 20, marginBottom: 30}}
                 onPress={() => props.navigation.navigate('ForgetPassword')}>
-                <Text style={{ color: '#5ecbf5', fontSize: 12 }}>
+                <Text style={{color: '#5ecbf5', fontSize: 12}}>
                   LUPA PASSWORD?
                 </Text>
               </Button>
-              <View style={{ flexDirection: 'row', flex: 1 }}>
+              <View style={{flexDirection: 'row', flex: 1}}>
                 <Grid>
                   <Col size={5}>
                     <Text
@@ -117,22 +118,13 @@ const Login = props => {
                       onPress={() =>
                         props.navigation.navigate('EmailRegister')
                       }>
-                      <Text style={{ color: '#5ecbf5', fontSize: 12 }}>
+                      <Text style={{color: '#5ecbf5', fontSize: 12}}>
+                        {' '}
                         DAFTAR
                       </Text>
                     </TouchableOpacity>
                   </Col>
                 </Grid>
-
-                {/* <View style={{ flex: 1 }}>
-                                    <Text style={{ color: '#bdc4c4' }}>Belum Punya akun Landy?</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Button full transparent
-                                        onPress={() => props.navigation.navigate('Login')}>
-                                        <Text style={{ color: '#5ecbf5' }}>DAFTAR</Text>
-                                    </Button>
-                                </View> */}
               </View>
             </View>
           </Form>
