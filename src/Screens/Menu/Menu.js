@@ -93,7 +93,7 @@ const Menu = props => {
             <Icon type="EvilIcons" name="refresh" style={Styles.icon} />
           </View>
           <View style={Styles.bantuanBantuan}>
-            <Text>Refound</Text>
+            <Text>Refund</Text>
           </View>
         </View>
         <View style={Styles.bantuan}>

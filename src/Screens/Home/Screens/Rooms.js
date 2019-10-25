@@ -1,5 +1,5 @@
 import React from 'react';
-import {Content, View, Button, Text, Icon} from 'native-base';
+import {Content, View, Button, Text, Icon, DatePicker} from 'native-base';
 import {Image, TouchableOpacity} from 'react-native';
 import Styles from './Style.style';
 
@@ -31,7 +31,32 @@ const Rooms = props => {
             <View style={Styles.inputAreaBox}>
               <Text style={Styles.titleBox}>Check-in</Text>
               <View style={{flexDirection: 'row'}}>
-                <Text style={Styles.titleDesc}>Jum'at, 25 Oktober 2019</Text>
+                <DatePicker
+                  // defaultDate={new Date(2019, 10, 4)}
+                  minimumDate={new Date()}
+                  maximumDate={new Date(2019, 12, 29)}
+                  locale={'en'}
+                  timeZoneOffsetInMinutes={undefined}
+                  modalTransparent={false}
+                  animationType={'fade'}
+                  androidMode={'calendar'}
+                  supportedOrientations={'Landscape'}
+                  placeHolderText="Select date"
+                  textStyle={{
+                    fontSize: 16,
+                    fontWeight: 'bold',
+                    marginLeft: -10,
+                    marginTop: -10,
+                  }}
+                  placeHolderTextStyle={{
+                    fontSize: 16,
+                    fontWeight: 'bold',
+                    marginLeft: -10,
+                    marginTop: -10,
+                  }}
+                  // onDateChange={this.setDate}
+                  disabled={false}
+                />
                 <View style={Styles.dot} />
               </View>
             </View>
@@ -40,7 +65,7 @@ const Rooms = props => {
 
         <TouchableOpacity
           style={Styles.inputBoxItem}
-          onPress={() => props.navigate('FindPlace')}>
+          onPress={() => props.navigate('Durasi')}>
           <View style={Styles.inputBox}>
             <Icon
               type="MaterialCommunityIcons"
@@ -57,7 +82,11 @@ const Rooms = props => {
           </View>
         </TouchableOpacity>
 
-        <Button full warning style={Styles.buttonCariKamar} onPress={()=> props.navigate('ListRoom')}>
+        <Button
+          full
+          warning
+          style={Styles.buttonCariKamar}
+          onPress={() => props.navigate('ListRoom')}>
           <Text style={Styles.textCariKamar}>Cari Kamar Landy Rooms</Text>
         </Button>
 
