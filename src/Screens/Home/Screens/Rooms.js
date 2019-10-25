@@ -1,6 +1,7 @@
 import React from 'react';
 import {Content, View, Button, Text, Icon, DatePicker} from 'native-base';
 import {Image, TouchableOpacity} from 'react-native';
+import Moment from 'moment/min/moment-with-locales';
 import Styles from './Style.style';
 
 const Rooms = props => {
@@ -29,7 +30,6 @@ const Rooms = props => {
             <Text style={Styles.titleBox}>Check-in</Text>
             <View style={{flexDirection: 'row'}}>
               <DatePicker
-                // defaultDate={new Date(2019, 10, 4)}
                 minimumDate={new Date()}
                 maximumDate={new Date(2019, 12, 29)}
                 locale={'en'}
@@ -38,7 +38,9 @@ const Rooms = props => {
                 animationType={'fade'}
                 androidMode={'calendar'}
                 supportedOrientations={'Landscape'}
-                placeHolderText="Select date"
+                placeHolderText={Moment()
+                  .locale('id')
+                  .format('dddd, D MMMM YYYY')}
                 textStyle={{
                   fontSize: 16,
                   fontWeight: 'bold',
@@ -51,7 +53,6 @@ const Rooms = props => {
                   marginLeft: -10,
                   marginTop: -10,
                 }}
-                // onDateChange={this.setDate}
                 disabled={false}
               />
               <View style={Styles.dot} />
