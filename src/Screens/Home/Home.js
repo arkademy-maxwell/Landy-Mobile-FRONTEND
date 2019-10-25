@@ -35,7 +35,7 @@ const Rooms = props => {
               color: '#d0d4d7',
               fontWeight: 'normal',
             }}>
-            <ScreenPlane />
+            <ScreenPlane navigate={props.navigation.navigate} />
           </Tab>
         </Tabs>
       </View>
