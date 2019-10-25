@@ -20,13 +20,13 @@ import {
   Right,
 } from 'native-base';
 import {TouchableOpacity, Image, ScrollView} from 'react-native';
-import HeaderParent from '../../../Components/Header/parent/Header';
-import HeaderDotted from '../Component/Header';
+import HeaderParent from '../../../../Components/Header/parent/Header';
+import HeaderDotted from '../../../Pesanan/Component/Header';
 import Styles from './BuatPesanan.style';
-const BuatPesanan = props => {
+const BuatPesananPesawat = props => {
   return (
     <Container>
-      <HeaderParent menu="Akun" icon="arrow-back" {...props} />
+      <HeaderParent menu="Pemesanan Anda" icon="arrow-back" {...props} />
       <HeaderDotted a={props.active} />
       <Content>
         <View style={{marginLeft: 20, marginRight: 35, marginBottom: 20}}>
@@ -85,34 +85,23 @@ const BuatPesanan = props => {
             <Card style={Styles.card}>
               <Grid>
                 <Row>
-                  <Col size={2}>
-                    <Image
-                      source={require('../../../Assets/Images/promo.png')}
-                      style={{width: 75, height: 75, borderRadius: 5}}
-                    />
-                  </Col>
+                  <Col size={2}></Col>
                   <Col size={6}>
                     <View style={{marginLeft: 20}}>
-                      <Text style={{fontSize: 12}}>
-                        Landy Fatmawati Abdul Majid Raya 12 Jakarta
-                      </Text>
-                      <Text style={Styles.addressDate}>
-                        Jl. Abdul Majid Raya No. 12
-                      </Text>
-                      <Text style={Styles.addressDate}>
-                        25 - 30 Oktober 2019
-                      </Text>
+                      <Text style={{fontSize: 12}}>Jakarta - Surabaya</Text>
                     </View>
                   </Col>
+                </Row>
+                <Row>
+                  <Text style={Styles.addressDate}>25 - 30 Oktober 2019</Text>
                 </Row>
                 <Row>
                   <Card style={Styles.cardInside}>
                     <Grid>
                       <Col size={5}>
                         <Text style={{fontSize: 12}}>
-                          Landy Rooms Superior Twin 10
+                          Citylink (Dewasa) (x1)
                         </Text>
-                        <Text style={{fontSize: 12}}>Max (x1)</Text>
                       </Col>
                       <Col size={2}>
                         <Text style={{fontSize: 12}}>Rp.150000</Text>
@@ -121,10 +110,10 @@ const BuatPesanan = props => {
                   </Card>
                 </Row>
                 <Row>
-                  <Text style={Styles.dataTamu}>Data Tamu</Text>
+                  <Text style={Styles.dataTamu}>Data Penumpang</Text>
                 </Row>
                 <TouchableOpacity
-                  onPress={() => props.navigation.navigate('DataTamu')}>
+                  onPress={() => props.navigation.navigate('DataPenumpang')}>
                   <Row>
                     <Card style={Styles.cardInsideTwo}>
                       <Grid>
@@ -135,7 +124,7 @@ const BuatPesanan = props => {
                             marginRight: 10,
                           }}>
                           <Col size={5}>
-                            <Text>Isi data tamu</Text>
+                            <Text>1. Isi Data Dewasa</Text>
                           </Col>
                           <Col size={2}>
                             <Icon
@@ -165,7 +154,9 @@ const BuatPesanan = props => {
               <Button
                 warning
                 style={Styles.buttonChoose}
-                onPress={() => props.navigation.navigate('KonfirmasiPesanan')}>
+                onPress={() =>
+                  props.navigation.navigate('KonfirmasiPesananPesawat')
+                }>
                 <Text style={{color: '#000'}}>Lanjut</Text>
               </Button>
             </Col>
@@ -176,4 +167,4 @@ const BuatPesanan = props => {
   );
 };
 
-export default BuatPesanan;
+export default BuatPesananPesawat;

@@ -84,7 +84,7 @@ const DataTermurah = props => {
                 </Text>
                 <Button
                   style={Style.buttonPrice}
-                  onPress={() => props.navigation.navigate('DetailRoom')}>
+                  onPress={() => props.navigate('BuatPesananPesawat')}>
                   <Text style={{color: '#454643'}}>Rp 500.000</Text>
                 </Button>
                 <View style={{marginHorizontal: 20, marginTop: 10}}>

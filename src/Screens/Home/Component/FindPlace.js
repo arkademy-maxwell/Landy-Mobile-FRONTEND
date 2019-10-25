@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {Image, ScrollView, TouchableOpacity} from 'react-native';
 import {
   Container,
@@ -27,6 +27,7 @@ import Styles from './FindPlace.style';
 import LinearGradient from 'react-native-linear-gradient';
 
 const FindPlace = props => {
+  const [searchRegion, setSearchRegion] = useState('');
   return (
     <Container>
       <Content>
@@ -53,6 +54,8 @@ const FindPlace = props => {
                       placeholder="Ketik Region, Landmark"
                       placeholderTextColor="#000"
                       style={{fontSize: 13}}
+                      onChangeText={text => setSearchRegion(text)}
+                      value={searchRegion}
                     />
                   </Item>
                 </Col>

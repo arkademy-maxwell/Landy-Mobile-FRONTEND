@@ -52,62 +52,64 @@ const ListRoom = props => {
       </View>
       <Content>
         <View>
-          {Data.map(item => {
-            return (
-              <TouchableOpacity>
-                <Card style={Style.marginBottom}>
-                  <ListItem thumbnail>
-                    <Left>
-                      <View>
-                        <Thumbnail
-                          style={{marginTop: 30}}
-                          square
-                          source={require('../../../Assets/Images/ListRoom.jpg')}
-                        />
-                        <Icon
-                          style={{marginTop: 15, marginBottom: 10}}
-                          size={15}
-                          color={'#74D3F6'}
-                          type="Ionicons"
-                          name="ios-thumbs-up">
-                          <Text> </Text>
-                          <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                            Excellent
-                          </Text>
-                        </Icon>
-                      </View>
-                    </Left>
-                    <Body style={Style.borderWith}>
-                      <Text>{item.room}</Text>
-                      <Text note numberOfLines={1}>
-                        {item.locations}
+          <TouchableOpacity>
+            <Card style={Style.marginBottom}>
+              <ListItem thumbnail>
+                <Left>
+                  <View>
+                    <Thumbnail
+                      style={{marginTop: 30}}
+                      square
+                      source={require('../../../Assets/Images/ListRoom.jpg')}
+                    />
+                    <Icon
+                      style={{marginTop: 15, marginBottom: 10}}
+                      size={15}
+                      color={'#74D3F6'}
+                      type="Ionicons"
+                      name="ios-thumbs-up">
+                      <Text> </Text>
+                      <Text style={{fontSize: 11, color: '#74D3F6'}}>
+                        Excellent
                       </Text>
-                    </Body>
-                    <Right style={Style.borderWith}>
-                      <Text style={Style.textList}>Harga/malam</Text>
-                      <Text
-                        style={{
-                          textDecorationLine: 'line-through',
-                          fontSize: 11,
-                          marginRight: 15,
-                        }}>
-                        {item.price}
-                      </Text>
-                      <Button
-                        style={Style.buttonPrice}
-                        onPress={() =>
-                          props.navigation.navigate('DetailRoom', {
+                    </Icon>
+                  </View>
+                </Left>
+                <Body style={Style.borderWith}>
+                  {/* <Text>{item.room}</Text> */}
+                  <Text note numberOfLines={1}>
+                    {/* {item.locations} */}
+                  </Text>
+                </Body>
+                <Right style={Style.borderWith}>
+                  <Text style={Style.textList}>Harga/malam</Text>
+                  <Text
+                    style={{
+                      textDecorationLine: 'line-through',
+                      fontSize: 11,
+                      marginRight: 15,
+                    }}>
+                    15000000
+                    {/* {item.price} */}
+                  </Text>
+                  <Button
+                    style={Style.buttonPrice}
+                    onPress={() => props.navigation.navigate('DetailRoom')}>
+                    {/* , {
                             id: item.id,
-                          })
-                        }>
-                        <Text style={{color: '#454643'}}>{item.price}</Text>
-                      </Button>
-                    </Right>
-                  </ListItem>
-                </Card>
-              </TouchableOpacity>
+                          } */}
+                    {/* <Text style={{color: '#454643'}}>{item.price}</Text> */}
+                    <Text>jsdnm</Text>
+                  </Button>
+                </Right>
+              </ListItem>
+            </Card>
+          </TouchableOpacity>
+          {/* {Data.map(item => {
+            return (
+             
             );
-          })}
+          })} */}
         </View>
       </Content>
     </Container>

@@ -18,7 +18,7 @@ import {
 } from 'native-base';
 import {TouchableOpacity, Image} from 'react-native';
 import Header from '../../../../Components/Header/parent/Header';
-import HeaderDotted from '../../Component/Header';
+import HeaderDotted from '../../../Pesanan/Component/Header';
 import Styles from './MetodePembayaran.style';
 const MetodePembayaran = props => {
   return (

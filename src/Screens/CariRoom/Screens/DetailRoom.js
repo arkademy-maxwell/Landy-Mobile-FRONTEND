@@ -19,7 +19,13 @@ import {
   CardItem,
   CheckBox,
 } from 'native-base';
-import {ScrollView, ImageBackground, Image, ToastAndroid} from 'react-native';
+import {
+  ScrollView,
+  ImageBackground,
+  Image,
+  ToastAndroid,
+  TouchableOpacity,
+} from 'react-native';
 import Header from '../Components/Header';
 import Styles from './DetailRoom.style';
 import LinearGradient from 'react-native-linear-gradient';

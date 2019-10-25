@@ -26,7 +26,7 @@ const HeaderDotted = props => {
                   <Row style={{alignItems: 'center'}}>
                     <Col size={1}>
                       <View style={Styles.dotted}>
-                        <Text style={Styles.number}>3</Text>
+                        <Text style={Styles.number}>2</Text>
                       </View>
                     </Col>
                     <Col style={{paddingLeft: 20, paddingRight: 20}}>

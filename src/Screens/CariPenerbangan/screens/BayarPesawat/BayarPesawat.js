@@ -20,13 +20,13 @@ import {
   Right,
 } from 'native-base';
 import {TouchableOpacity, Image, ScrollView} from 'react-native';
-import HeaderParent from '../../../../Components/Header/parent/Header';
-import HeaderDotted from '../../Component/Header';
-import Styles from './bayar.style';
+import Header from '../../../../Components/Header/parent/Header';
+import HeaderDotted from '../../../Pesanan/Component/Header';
+import Styles from './BayarPesawat.style';
 const Bayar = props => {
   return (
     <Container>
-      <HeaderParent menu="Alfamart" icon="arrow-back" {...props} />
+      <Header menu="Alfamart" icon="arrow-back" {...props} />
       <HeaderDotted />
       <Content style={{backgroundColor: '#ecf0f1'}}>
         <View style={Styles.wrapper}>
@@ -53,36 +53,27 @@ const Bayar = props => {
             <Text style={Styles.titleOne}>Airy</Text>
             <Card style={Styles.card}>
               <Grid>
-                <Row>
+                <Row style={{alignItems: 'center'}}>
                   <Col size={1}>
-                    <Icon
-                      type="FontAwesome"
-                      name="building"
-                      style={Styles.icon}
+                    <Image
+                      source={require('../../../../../public/Bayar/citylink.png')}
+                      style={{width: 50, height: 20}}
                     />
                   </Col>
-                  <Col size={11}>
-                    <Text style={Styles.nameRooms}>
-                      Landy Ancol Kemayoran RE Martadinata 12 Jakarta
-                    </Text>
+                  <Col size={4}>
+                    <Text style={Styles.nameRooms}>Jakarta - Surabaya</Text>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
                     <Text style={Styles.address}>
-                      Jl. R E Martadinata No.12 P-Q
-                    </Text>
-                    <Text style={Styles.address}>
-                      25 Okt - 30 Okt (5 Malam)
+                      Sabtu, 26 Okt 2019, 20:15 HLP - 21:35 SUB
                     </Text>
                   </Col>
                 </Row>
                 <Row style={Styles.borderTop}>
                   <Col size={5}>
-                    <Text style={Styles.ketetrangan}>
-                      Landy Rooms Superior Twin 5
-                    </Text>
-                    <Text style={Styles.ketetrangan}>Malam (x1)</Text>
+                    <Text style={Styles.ketetrangan}>Citylink (Adult)(x1)</Text>
                   </Col>
                   <Col size={2}>
                     <Text style={Styles.ketetrangan}>Rp.15000000</Text>

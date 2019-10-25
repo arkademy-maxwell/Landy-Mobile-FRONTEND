@@ -18,8 +18,8 @@ import {
 } from 'native-base';
 import {TouchableOpacity, Image} from 'react-native';
 import Header from '../../../../Components/Header/parent/Header';
-import HeaderDotted from '../../Component/Header';
-const KonfirmasiPesanan = props => {
+import HeaderDotted from '../../../Pesanan/Component/Header';
+const KonfirmasiPesananPesawat = props => {
   return (
     <Container>
       <Header menu="Konfimasi Pesanan" icon="arrow-back" {...props} />
@@ -82,24 +82,23 @@ const KonfirmasiPesanan = props => {
           </Grid>
           <Card style={{padding: 10, elevation: 0, marginTop: 30}}>
             <Grid>
-              <Row>
-                <Col size={2}>
+              <Row style={{alignItems: 'center'}}>
+                <Col size={1}>
                   <Image
-                    source={require('../../../../Assets/Images/promo.png')}
-                    style={{width: 75, height: 75, borderRadius: 5}}
+                    source={require('../../../../../public/Bayar/citylink.png')}
+                    style={{width: 50, height: 20}}
                   />
                 </Col>
                 <Col size={6}>
                   <View style={{marginLeft: 20}}>
-                    <Text style={{fontSize: 13}}>Landy Rooms SUper Twin</Text>
-                    <Text style={{fontSize: 13, color: '#7f8c8d'}}>
-                      Jl. Abdul Majid Raya No. 12
-                    </Text>
-                    <Text style={{fontSize: 13, color: '#7f8c8d'}}>
-                      25 - 30 Oktober 2019
-                    </Text>
+                    <Text style={{fontSize: 13}}>Jakarta - Surabaya</Text>
                   </View>
                 </Col>
+              </Row>
+              <Row>
+                <Text style={{fontSize: 13, color: '#7f8c8d'}}>
+                  Sabtu, 26 Okt 2019, 20:15 HLP - 21:35 SUB
+                </Text>
               </Row>
               <Row
                 style={{
@@ -156,11 +155,11 @@ const KonfirmasiPesanan = props => {
         full
         warning
         style={{position: 'relative', bottom: 0, backgroundColor: '#ffcb00'}}
-        onPress={() => props.navigation.navigate('MetodePembayaran')}>
+        onPress={() => props.navigation.navigate('MetodePembayaranPesawat')}>
         <Text style={{color: '#000'}}>Lanjutkan</Text>
       </Button>
     </Container>
   );
 };
 
-export default KonfirmasiPesanan;
+export default KonfirmasiPesananPesawat;
