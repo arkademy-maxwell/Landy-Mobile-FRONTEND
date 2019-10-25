@@ -39,331 +39,75 @@ const ListRoom = props => {
 
   return (
     <Container style={{backgroundColor: '#ecf0f1'}}>
-      <Header />
+      <Header {...props} />
+      <View>
+        <View style={{backgroundColor: '#fff'}}>
+          <View style={{margin: 10}}>
+            <Image
+              source={require('../../../../public/register/Capture.png')}
+              style={{width: '100%'}}
+            />
+          </View>
+        </View>
+      </View>
       <Content>
         <View>
-          <TouchableOpacity>
-            <View style={{backgroundColor: '#fff'}}>
-              <View style={{margin: 10}}>
-                <Image
-                  source={require('../../../../public/register/Capture.png')}
-                  style={{width: '98%'}}
-                />
-              </View>
-            </View>
-          </TouchableOpacity>
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellen
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button
-                  style={Style.buttonPrice}
-                  onPress={() => props.navigation.navigate('DetailRoom')}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-          {/* </TouchableOpacity> */}
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
-          <Card style={Style.marginBottom}>
-            <ListItem thumbnail>
-              <Left>
-                <View>
-                  <Thumbnail
-                    style={{marginTop: 30}}
-                    square
-                    source={require('../../../Assets/Images/ListRoom.jpg')}
-                  />
-                  <Icon
-                    style={{marginTop: 15, marginBottom: 10}}
-                    size={15}
-                    color={'#74D3F6'}
-                    type="Ionicons"
-                    name="ios-thumbs-up">
-                    <Text> </Text>
-                    <Text style={{fontSize: 11, color: '#74D3F6'}}>
-                      Excellent
-                    </Text>
-                  </Icon>
-                </View>
-              </Left>
-              <Body style={Style.borderWith}>
-                <Text>Airy Beji Margonda Raya 88 Bogor</Text>
-                <Text note numberOfLines={1}>
-                  Bogor
-                </Text>
-              </Body>
-              <Right style={Style.borderWith}>
-                <Text style={Style.textList}>Harga/malam</Text>
-                <Text
-                  style={{
-                    textDecorationLine: 'line-through',
-                    fontSize: 11,
-                    marginRight: 15,
-                  }}>
-                  Rp 2.000.000
-                </Text>
-                <Button style={Style.buttonPrice}>
-                  <Text style={{color: '#454643'}}>Rp 500.000</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </Card>
+          {Data.map(item => {
+            return (
+              <TouchableOpacity>
+                <Card style={Style.marginBottom}>
+                  <ListItem thumbnail>
+                    <Left>
+                      <View>
+                        <Thumbnail
+                          style={{marginTop: 30}}
+                          square
+                          source={require('../../../Assets/Images/ListRoom.jpg')}
+                        />
+                        <Icon
+                          style={{marginTop: 15, marginBottom: 10}}
+                          size={15}
+                          color={'#74D3F6'}
+                          type="Ionicons"
+                          name="ios-thumbs-up">
+                          <Text> </Text>
+                          <Text style={{fontSize: 11, color: '#74D3F6'}}>
+                            Excellent
+                          </Text>
+                        </Icon>
+                      </View>
+                    </Left>
+                    <Body style={Style.borderWith}>
+                      <Text>{item.room}</Text>
+                      <Text note numberOfLines={1}>
+                        {item.locations}
+                      </Text>
+                    </Body>
+                    <Right style={Style.borderWith}>
+                      <Text style={Style.textList}>Harga/malam</Text>
+                      <Text
+                        style={{
+                          textDecorationLine: 'line-through',
+                          fontSize: 11,
+                          marginRight: 15,
+                        }}>
+                        {item.price}
+                      </Text>
+                      <Button
+                        style={Style.buttonPrice}
+                        onPress={() =>
+                          props.navigation.navigate('DetailRoom', {
+                            id: item.id,
+                          })
+                        }>
+                        <Text style={{color: '#454643'}}>{item.price}</Text>
+                      </Button>
+                    </Right>
+                  </ListItem>
+                </Card>
+              </TouchableOpacity>
+            );
+          })}
         </View>
       </Content>
     </Container>

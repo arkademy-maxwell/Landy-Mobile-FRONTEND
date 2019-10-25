@@ -39,7 +39,7 @@ const ForgetPassword = props => {
             <Form>
               <Item floatingLabel>
                 <Label>Email</Label>
-                <Input />
+                <Input keyboardType="email-address" autoCapitalize="none" />
               </Item>
               <Button
                 full

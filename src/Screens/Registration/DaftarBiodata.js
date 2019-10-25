@@ -21,7 +21,7 @@ import Axios from 'axios';
 import {API_BASEURL} from 'react-native-dotenv';
 
 const DaftarBiodata = props => {
-  const [title_id, setTitle_ID] = useState('');
+  const [title_id, setTitle_ID] = useState(1);
   const [first_name, setFirst_Name] = useState('');
   const [last_name, setLast_Name] = useState('');
   const [email, setEmail] = useState('');
@@ -34,6 +34,7 @@ const DaftarBiodata = props => {
   }, [props.navigation]);
 
   const handlePicker = value => {
+    console.log(value);
     setTitle_ID(value);
   };
 
@@ -68,6 +69,7 @@ const DaftarBiodata = props => {
         props.navigation.navigate('EmailAktivasi');
       })
       .catch(error => {
+        console.log(email);
         ToastAndroid.show('Register Failed!', ToastAndroid.LONG);
       });
   };
@@ -87,7 +89,7 @@ const DaftarBiodata = props => {
                 placeholderStyle={{color: '#bfc6ea'}}
                 placeholderIconColor="#007aff"
                 selectedValue={title_id}
-                onValueChange={value => handlePicker(value)}>
+                onValueChange={handlePicker}>
                 <Picker.Item label="Tuan" value="1" />
                 <Picker.Item label="Nyonya" value="2" />
                 <Picker.Item label="Nona" value="3" />
@@ -109,7 +111,11 @@ const DaftarBiodata = props => {
             </Item>
             <Item floatingLabel>
               <Label>Email</Label>
-              <Input onChangeText={text => setEmail(text)} value={email} />
+              <Input
+                onChangeText={text => setEmail(text)}
+                value={email}
+                keyboardType="email-address"
+              />
             </Item>
             <Grid>
               <Col>

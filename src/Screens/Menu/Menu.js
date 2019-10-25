@@ -17,6 +17,41 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../../Components/Header/child/Header';
 import Styles from './Menu.style';
 
+const HeaderLogin = props => (
+  <View style={Styles.headerMenu}>
+    <View style={{margin: 20}}>
+      <Text style={Styles.title}>Menjadi Landy Traveler</Text>
+      <Grid>
+        <Row>
+          <Col size={2}>
+            <Image
+              source={require('../../../public/register/menjadiairy.png')}
+              style={Styles.image}
+            />
+          </Col>
+          <Col size={4}>
+            <Text style={Styles.text}>
+              Masuk atau daftar sekarang dan nikmati kenyamanan pemesanan kamar
+              & tiket pesawat melalui aplikasi landy
+            </Text>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button
+              full
+              warning
+              style={Styles.button}
+              onPress={() => props.navigation.navigate('Main')}>
+              <Text>Masuk atau Daftar</Text>
+            </Button>
+          </Col>
+        </Row>
+      </Grid>
+    </View>
+  </View>
+);
+
 const LoginMenu = props => (
   <View>
     <View style={Styles.viewTextWelcome}>
@@ -74,40 +109,9 @@ const Menu = props => {
           colors={['#0180ef', '#018eef']}
           style={Styles.linearGradient}>
           <Header menu="Menu" />
-          <View style={Styles.headerMenu}>
-            <View style={{margin: 20}}>
-              <Text style={Styles.title}>Menjady Landy Traveler</Text>
-              <Grid>
-                <Row>
-                  <Col size={2}>
-                    <Image
-                      source={require('../../../public/register/menjadiairy.png')}
-                      style={Styles.image}
-                    />
-                  </Col>
-                  <Col size={4}>
-                    <Text style={Styles.text}>
-                      Masuk atau daftar sekarang dan nikmati kenyamanan
-                      pemesanan kamar & tiket pesawat melalui aplikasi landy
-                    </Text>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Button
-                      full
-                      warning
-                      style={Styles.button}
-                      onPress={() => props.navigation.navigate('Main')}>
-                      <Text>Masuk atau Daftar</Text>
-                    </Button>
-                  </Col>
-                </Row>
-              </Grid>
-            </View>
-          </View>
+          {!result.token && <HeaderLogin name={result.name} {...props} />}
         </LinearGradient>
-        {result.token ? <LoginMenu name={result.name} /> : null}
+        {result.token && <LoginMenu name={result.name} />}
         <TouchableOpacity onPress={() => props.navigation.navigate('Akun')}>
           <View style={Styles.listView}>
             <View style={Styles.listLogo}>
