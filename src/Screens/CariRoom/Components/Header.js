@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Header,
@@ -19,7 +19,7 @@ const Headers = props => {
         </Button>
       </Left>
       <Body>
-        <Title>Locations</Title>
+        <Title>Rooms</Title>
       </Body>
       <Right>
         <Button transparent>

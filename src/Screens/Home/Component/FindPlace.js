@@ -1,5 +1,5 @@
-import React, {Component, useState} from 'react';
-import {Image, ScrollView, TouchableOpacity} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Image, ScrollView, TouchableOpacity } from 'react-native';
 import {
   Container,
   Content,
@@ -26,34 +26,38 @@ import {
 import Styles from './FindPlace.style';
 import LinearGradient from 'react-native-linear-gradient';
 
+import Axios from 'axios'
+import { API_BASEURL } from 'react-native-dotenv'
+
 const FindPlace = props => {
+  const [Data, setData] = useState([])
   const [searchRegion, setSearchRegion] = useState('');
   return (
     <Container>
       <Content>
         <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
           colors={['#017ff0', '#00aeef']}>
           <View style={Styles.header}>
             <Grid style={Styles.HeaderView}>
-              <Row style={{alignItems: 'center'}}>
+              <Row style={{ alignItems: 'center' }}>
                 <Col size={1}>
                   <Icon name="ios-close" style={Styles.close} />
                 </Col>
                 <Col size={5}>
-                  <Text style={{color: '#fff', marginTop: 2}}>
-                    Meninap Dimana?
+                  <Text style={{ color: '#fff', marginTop: 2 }}>
+                    Menginap Di mana?
                   </Text>
                 </Col>
               </Row>
-              <Row style={{alignItems: 'center'}}>
+              <Row style={{ alignItems: 'center' }}>
                 <Col size={5}>
                   <Item regular style={Styles.InputFindPlace}>
                     <Input
                       placeholder="Ketik Region, Landmark"
                       placeholderTextColor="#000"
-                      style={{fontSize: 13}}
+                      style={{ fontSize: 13 }}
                       onChangeText={text => setSearchRegion(text)}
                       value={searchRegion}
                     />
@@ -72,8 +76,8 @@ const FindPlace = props => {
 
         <View>
           <TouchableOpacity>
-            <Grid style={{marginLeft: 20, marginTop: 5}}>
-              <Row style={{alignItems: 'center'}}>
+            <Grid style={{ marginLeft: 20, marginTop: 5 }}>
+              <Row style={{ alignItems: 'center' }}>
                 <Col size={1}>
                   <Icon type="Entypo" name="location" style={Styles.iconBox} />
                 </Col>
@@ -88,15 +92,15 @@ const FindPlace = props => {
                     <Text>Jakarta</Text>
                   </Col>
                   <Col>
-                    <Text style={{color: '#b0b8b9', fontSize: 13}}>region</Text>
+                    <Text style={{ color: '#b0b8b9', fontSize: 13 }}>region</Text>
                   </Col>
                 </Col>
               </Row>
             </Grid>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Grid style={{marginLeft: 20, marginTop: 5}}>
-              <Row style={{alignItems: 'center'}}>
+            <Grid style={{ marginLeft: 20, marginTop: 5 }}>
+              <Row style={{ alignItems: 'center' }}>
                 <Col size={1}>
                   <Icon type="Entypo" name="location" style={Styles.iconBox} />
                 </Col>
@@ -111,7 +115,7 @@ const FindPlace = props => {
                     <Text>Jakarta</Text>
                   </Col>
                   <Col>
-                    <Text style={{color: '#b0b8b9', fontSize: 13}}>region</Text>
+                    <Text style={{ color: '#b0b8b9', fontSize: 13 }}>region</Text>
                   </Col>
                 </Col>
               </Row>
