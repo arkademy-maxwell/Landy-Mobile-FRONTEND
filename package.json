@@ -16,7 +16,7 @@
     "native-base": "^2.13.8",
     "pinar": "^0.11.0",
     "react": "16.9.0",
-    "react-native": "0.61.2",
+    "react-native": "0.62.3",
     "react-native-dotenv": "^0.2.0",
     "react-native-dots-pagination": "^0.1.6",
     "react-native-gesture-handler": "^1.4.1",
